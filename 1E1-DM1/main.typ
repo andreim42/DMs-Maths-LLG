@@ -112,7 +112,7 @@ from logics import Logic3
 variables = ["P", "Q"]
 
 assertions = [
-    (lambda P, Q:(~P), "not(P)"),
+    (lambda Q:(~P), "not(P)"),
     (lambda P, Q:(~P) | Q , "not(P) or Q"),
     (lambda P, Q:P >> Q, "P => Q"),
 ]
@@ -135,8 +135,8 @@ from logics import Logic3
 variables = ["P", "Q"]
 
 assertions = [
-    (lambda P, Q:(~P), "not(P)"),
-    (lambda P, Q:(~Q), "not(Q)"),
+    (lambda P:(~P), "not(P)"),
+    (lambda Q:(~Q), "not(Q)"),
     (lambda P, Q:P >> Q, "P => Q"),
     (lambda P, Q:~Q >> ~P, "not(Q) => not(P)"),
 
