@@ -103,6 +103,8 @@ Donc les assertions $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) a
 
 == Questions préliminaires
 
+===
+
 == Les triangles magiques
 
 ]

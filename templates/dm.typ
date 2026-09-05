@@ -4,7 +4,7 @@
     numbers: true,
     auteurs: "BONNET Zéphyr, FERRAOUN Rayane, MELLIER Raphaël, MITROI Andrei",
     classe: $1^"ère"1$,
-    numero: 0,
+    numero: 1,
     body,
 ) = {
     set document(author: auteurs, title: "DM de maths n°" + str(numero))
