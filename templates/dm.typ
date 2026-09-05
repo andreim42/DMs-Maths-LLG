@@ -83,21 +83,21 @@
     }
 
     show heading.where(level: 2): it => {
-    v(1.2em, weak: true)
-    align(center)[
-        #rect(
-        fill: luma(240),
-        radius: 4pt,
-        inset: (x: 12pt, y: 5pt),
-        [
-            #text(size: 11pt, weight: "bold")[
-            #counter(heading).display()
-            #if it.body != [] [ \- #it.body ]
+        v(1.2em, weak: true)
+        align(center)[
+            #rect(
+            fill: luma(240),
+            radius: 4pt,
+            inset: (x: 12pt, y: 5pt),
+            [
+                #text(size: 11pt, weight: "bold")[
+                #counter(heading).display()
+                #if it.body != [] [ \- #it.body ]
+                ]
             ]
+            )
         ]
-        )
-    ]
-    v(0.6em, weak: true)
+        v(0.6em, weak: true)
     }
 
     show heading.where(level: 3): it => {

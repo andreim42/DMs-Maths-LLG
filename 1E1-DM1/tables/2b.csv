@@ -1,0 +1,10 @@
+$cal(P)$,$cal(Q)$,$not cal(P)$,$not cal(Q)$,$cal(P) => cal(Q)$,$not cal(Q) => not cal(P)$
+V,V,F,F,V,V
+V,F,F,V,F,F
+V,I,F,I,I,I
+F,V,V,F,V,V
+F,F,V,V,V,V
+F,I,V,I,V,V
+I,V,I,F,V,V
+I,F,I,V,I,I
+I,I,I,I,V,V
