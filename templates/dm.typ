@@ -29,6 +29,9 @@
             show ".": "," + h(0pt)
             match
         }
+
+        show "'": "’"
+
         it
     }
 
@@ -37,6 +40,8 @@
         if pos.len() == 1 {
             problems_name + " " + numbering(if numbers { "1" } else { "A" }, pos.last())
         } else if pos.len() == 2 {
+            "Partie " + numbering("A", pos.last())
+        } else if pos.len() == 3 {
             numbering("1)", pos.last())
         } else {
             numbering("a)", pos.last())
@@ -78,11 +83,29 @@
     }
 
     show heading.where(level: 2): it => {
+    v(1.2em, weak: true)
+    align(center)[
+        #rect(
+        fill: luma(240),
+        radius: 4pt,
+        inset: (x: 12pt, y: 5pt),
+        [
+            #text(size: 11pt, weight: "bold")[
+            #counter(heading).display()
+            #if it.body != [] [ \- #it.body ]
+            ]
+        ]
+        )
+    ]
+    v(0.6em, weak: true)
+    }
+
+    show heading.where(level: 3): it => {
         v(1em, weak: true)
         
         context {
             let nums = counter(heading).get()
-            if nums.len() > 1 and nums.at(1) > 1 {
+            if nums.len() > 1 and nums.at(2) > 1 {
                 line(length: 100%, stroke: 0.5pt + luma(200))
                 v(0.5em, weak: true)
             }
@@ -93,7 +116,7 @@
         ]
     }
     
-    show heading.where(level: 3): it => {
+    show heading.where(level: 4): it => {
         v(0.8em, weak: true)
         box(inset: (left: 1.5em))[
             #text(11pt, weight: "bold")[#counter(heading).display() #it.body]
@@ -101,4 +124,16 @@
     }
 
     body
+}
+
+#let resultat(body) = {
+  box(
+    stroke: 0.6pt + black,
+    radius: 3pt,
+    inset: (x: 2pt, y: 7pt),
+    baseline: 30%,
+    fill: rgb("#fefefe"),
+    body
+  )
+  h(0.2em)
 }

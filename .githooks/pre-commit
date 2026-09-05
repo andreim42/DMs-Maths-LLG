@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# execute "git config --local core.hooksPath .githooks/" to enable hooks
+# source : https://gist.github.com/DArtagnant/5e5c89566b280e945f19b200d9642927
+
+echo "////"
+echo "Automatic detection of modified but unbuilt typst files..."
+
+root=$(git rev-parse --show-toplevel)
+diffs=$(git diff --cached --name-only --diff-filter=d -- '*.typ')
+
+if [ -z "$diffs" ]; then
+    echo "No typst file modified"
+    echo "////"
+    exit 0
+fi
+
+arr=($diffs)
+echo "Found ${#arr[*]} modified typst files."
+
+echo "Building these files..."
+for file in $diffs
+do
+    if [[ "$file" == template/* ]]; then
+        echo "- skipping template file $file..."
+        continue
+    fi
+
+    echo "- building $file..."
+    typst compile "$root/$file" --root $root
+    if [ $? -ne 0 ]; then
+        echo "typst command failed"
+        echo "////          !!!!!!"
+        exit 1
+    fi
+    git add "$root/${file%.*}.pdf"
+done
+
+echo done.
+echo "////"
+exit 0
