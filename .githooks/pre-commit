@@ -21,7 +21,7 @@ echo "Found ${#arr[*]} modified typst files."
 echo "Building these files..."
 for file in $diffs
 do
-    if [[ "$file" == template/* ]]; then
+    if [[ "$file" == templates/* ]]; then
         echo "- skipping template file $file..."
         continue
     fi
