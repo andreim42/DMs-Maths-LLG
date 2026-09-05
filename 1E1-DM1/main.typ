@@ -101,16 +101,49 @@ Donc les assertions $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) a
 Soient $cal(P), cal(Q), cal(R)$ des assertions.
 
 ====
-Montrons que $not(cal(P)) or cal(Q)$ est équivalente à $cal(P) ==> cal(Q)$ grace à leurs tables de vérités.
+Montrons que $not(cal(P)) or cal(Q)$ est équivalente à $cal(P) => cal(Q)$ grace à leurs tables de vérités.
 
-/*Générer et mettre ici le tableau de vérité 2a*/
+/*Générer et mettre ici le tableau de vérité 2a
+Python:
 
-Les colonnes $not(cal(P)) or cal(Q)$ et $cal(P) ==> cal(Q)$ sont identiques donc les deux assetions sont bien équivalentes.
+from engine.constructor import construct_table
+from logics import Logic3
+
+variables = ["P", "Q"]
+
+assertions = [
+    (lambda P, Q:(~P), "not(P)"),
+    (lambda P, Q:(~P) | Q , "not(P) or Q"),
+    (lambda P, Q:P >> Q, "P => Q"),
+]
+
+construct_table(Logic2, variables, assertions, "2a.csv")
+
+*/
+
+Les colonnes $not(cal(P)) or cal(Q)$ et $cal(P) => cal(Q)$ sont identiques donc les deux assetions sont bien équivalentes.
 
 ====
-Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not(cal(Q)) ==> not(cal(P))$ grace à leurs tables de vérités.
+Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not(cal(Q)) => not(cal(P))$ grace à leurs tables de vérités.
 
-/*Générer et mettre ici le tableau de vérité 2b*/
+/*Générer et mettre ici le tableau de vérité 2b
+Python:
+
+from engine.constructor import construct_table
+from logics import Logic3
+
+variables = ["P", "Q"]
+
+assertions = [
+    (lambda P, Q:(~P), "not(P)"),
+    (lambda P, Q:(~Q), "not(Q)"),
+    (lambda P, Q:P >> Q, "P => Q"),
+    (lambda P, Q:~Q >> ~P, "not(Q) => not(P)"),
+
+]
+
+construct_table(Logic2, variables, assertions, "2b.csv")
+*/
 
 Les colonnes $cal(P) ==> cal(Q)$ et $not(cal(Q)) ==> not(cal(P))$ sont identiques donc les deux assetions sont bien équivalentes.
 
