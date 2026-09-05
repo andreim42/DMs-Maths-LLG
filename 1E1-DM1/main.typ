@@ -98,6 +98,23 @@ $
 Donc les assertions $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) and cal(R)))$ sont bien équivalentes.
 
 ===
+Soient $cal(P), cal(Q), cal(R)$ des assertions.
+
+====
+Montrons que $not(cal(P)) or cal(Q)$ est équivalente à $cal(P) ==> cal(Q)$ grace à leurs tables de vérités.
+
+/*Générer et mettre ici le tableau de vérité 2a*/
+
+Les colonnes $not(cal(P)) or cal(Q)$ et $cal(P) ==> cal(Q)$ sont identiques donc les deux assetions sont bien équivalentes.
+
+====
+Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not(cal(Q)) ==> not(cal(P))$ grace à leurs tables de vérités.
+
+/*Générer et mettre ici le tableau de vérité 2b*/
+
+Les colonnes $cal(P) ==> cal(Q)$ et $not(cal(Q)) ==> not(cal(P))$ sont identiques donc les deux assetions sont bien équivalentes.
+
+====
 
 = Triangles magiques
 
