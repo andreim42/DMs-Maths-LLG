@@ -93,3 +93,16 @@ assertions_3a = [
 ]
 
 construct_table(Logic3, variables_3a, assertions_3a, "3a.csv")
+
+
+variables_3c = ["cal(P), cal(Q)"]
+
+assertions_3c = [
+    (lambda P, Q:~P, "not(cal(P))"),
+    (lambda P, Q:P >> Q, "cal(P) => cal(Q)"),
+    (lambda P, Q:~P >> Q, "not(cal(P)) => cal(Q)"),
+    (lambda P, Q:(P >> Q) & (~P >> Q), "(cal(P) => cal(Q)) and (not(cal(P)) => cal(Q))"),
+    (lambda P, Q:((P >> Q) & (~P >> Q)) >> Q, "((cal(P) => cal(Q)) and (not(cal(P)) => cal(Q))) => cal(Q)"),
+]
+
+construct_table(Logic3, variables_3c, assertions_3c, "3c.csv")
