@@ -144,13 +144,19 @@ Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ 
 
 Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques donc les deux assertions sont bien équivalentes. La méthode de démonstration par contraposition est donc utilisable dans $cal(L)_3$
 
-====
+==== 
 
-= Triangles magiques
+= Triangles magiques 
 
-== Questions préliminaires
 
-===
+== Questions préliminaires 
+=== La plus petite valeur pour leur somme est 6 : 
+
+$1 + 2 +3 = #strong[6]$
+
+=== La plus grande valeur pour leur somme est 24 : 
+
+$9 +8+7 = #strong[24]$
 
 == Les triangles magiques
 
@@ -221,3 +227,4 @@ Voici un triangle $19$-magique :
 )
 
 ]
+
