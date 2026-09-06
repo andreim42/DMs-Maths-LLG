@@ -1,6 +1,7 @@
 from engine.constructor import construct_table
 from logics import Logic3
 
+
 variables_1a = ["cal(P)", "cal(Q)"]
 
 assertions_1a = [
@@ -9,6 +10,7 @@ assertions_1a = [
 ]
 
 construct_table(Logic3, variables_1a, assertions_1a, "1a.csv")
+
 
 variables_1b = ["cal(P)", "cal(Q)", "cal(R)"]
 
@@ -21,6 +23,7 @@ assertions_1b = [
 
 construct_table(Logic3, variables_1b, assertions_1b, "1b.csv")
 
+
 variables_1c1 = ["cal(P)", "cal(Q)"]
 
 assertions_1c1 = [
@@ -32,6 +35,7 @@ assertions_1c1 = [
 ]
 
 construct_table(Logic3, variables_1c1, assertions_1c1, "1c1.csv")
+
 
 variables_1c2 = ["cal(P)", "cal(Q)"]
 
@@ -55,6 +59,7 @@ assertions_2a = [
 
 construct_table(Logic3, variables_2a, assertions_2a, "2a.csv")
 
+
 variables_2b = ["cal(P)", "cal(Q)"]
 
 assertions_2b = [
@@ -66,6 +71,7 @@ assertions_2b = [
 
 construct_table(Logic3, variables_2b, assertions_2b, "2b.csv")
 
+
 variables_2c = ["cal(P)", "cal(Q)", "cal(R)"]
 
 assertions_2c = [
@@ -76,5 +82,14 @@ assertions_2c = [
     (lambda P, Q, R:((P >> Q) & (Q >> P)) >> (P >> R), "((cal(P) => cal(Q)) and (cal(Q) => cal(R))) => (cal(P) => cal(R))"),
 ]
 
-
 construct_table(Logic3, variables_2c, assertions_2c, "2c.csv")
+
+
+variables_3a = ["cal(P)"]
+
+assertions_3a = [
+    (lambda P:~P, "not(cal(P))"),
+    (lambda P:P | (~P), "cal(P) or not(cal(P))"),
+]
+
+construct_table(Logic3, variables_3a, assertions_3a, "3a.csv")
