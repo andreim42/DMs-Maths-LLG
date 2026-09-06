@@ -129,7 +129,7 @@ Donc les assertions $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) a
 Soient $cal(P), cal(Q), cal(R)$ des assertions.
 
 ====
-Montrons que $not cal(P) or cal(Q)$ est équivalente à $cal(P) => cal(Q)$ grâce à leurs tables de vérités.
+Montrons que $not cal(P) or cal(Q)$ n'est pas équivalente à $cal(P) => cal(Q)$ grâce à leurs tables de vérités.
 
 #align(center)[
   #affiche-csv("tables/2a.csv")
@@ -195,7 +195,9 @@ Par conséquent, $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ 
 
 
 == Questions préliminaires 
-=== La plus petite valeur pour leur somme est 6 : 
+
+===
+La plus petite valeur pour leur somme est 6 : 
 
 On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à {1,...,9}
 
@@ -213,7 +215,7 @@ Donc 6 est minorant de l'ensemble des valeurs possibles de $S$
 #strong[Synthèse :]
 
 
-On verifie maintenant que ce minorant est effectivement atteint. En prenant : 
+On vérifie maintenant que ce minorant est effectivement atteint. En prenant : 
 
 $a=1,$   $b=2$,  $c=3$
 
@@ -222,14 +224,15 @@ $S=1+2+3=6$
 
 On a donc $min(S)=6$
 
- === La plus grande valeur pour leur somme est 24 : 
+===
+La plus grande valeur pour leur somme est 24 : 
 
 On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à {1,...,9}
 
 On suppose par l'absurde qu'il existe trois entiers naturels distincts $a$, $b$, $c$ tels que
 $S=a+b+c >= 25$
 
-Comme $a,b,c$ sont trois entiers naturels #strong[distincts], les seules trois valeurs les plus grandes sont $7,8, 9$. On a donc nécessairement : 
+Comme $a,b,c$ sont trois entiers naturels *distincts*, les seules trois valeurs les plus grandes sont $7,8, 9$. On a donc nécessairement : 
 $S=a+b+c<=7+8+9=24$
 
 Ce qui contredit $S>=25$
@@ -237,9 +240,9 @@ Ce qui contredit $S>=25$
 Donc S < 25
 Ainsi 24 est majorant de l'ensemble des valeurs possibles de $S$ 
 
-#strong[Synthèse :]
+*Synthèse :*
 
-On verifie maintenant que ce majorant est effectivement atteint. En prenant : 
+On vérifie maintenant que ce majorant est effectivement atteint. En prenant : 
 
 $a=7,$   $b=8$,  $c=9$
 
@@ -260,7 +263,7 @@ Voici le triangle complété afin qu'il soit $20$-magique :
 )
 
 ===
-On considère un triangle $S$-magique. Soit $T$ la somme des nombres placés sur ses trois sommets.
+On considère un triangle $S$-magique dont les nombres numérotés dans le sens trigonométrique sont : $n_1, n_2, n_3, n_4, n_5, n_6, n_7, n_8, n_9$. Soit $T$ la somme des nombres placés sur ses trois sommets.
 
 ====
 Montrons que $45 + T = 3S$ :
@@ -299,13 +302,45 @@ Voici un triangle $17$-magique :
 )
 
 ===
-Montrons qu'il n'existe pas de triangle $18$-magique :
+Montrons par l'absurde qu'il n'existe pas de triangle $18$-magique :
 
+Supposons par l'absurde qu'il existe un triangle $18$-magique.
+Soit $a, b, c$ les sommets du triangle.
+
+Supposons par l'absurde que $9$ n'appartient à aucun des sommets du triangle. Alors il existe (quitte à renommer les sommets) un côté avec pour nombres $a, 9, x, b$ (pas forcément dans cet ordre là).
+Donc $S = a + 9 + x + b$. Or, $S = 18$.
+
+Donc $a + x + b = 9$.
+Or, d'après la *2.c)*, $T = 9$. Donc $a + b + c = 9$.
+
+Donc $a + x + b = a + b + c$. Donc $x = c$. Or, tous les nombres placés sur le triangle sont distincts. Contradiction !
+
+Donc $9$ appartient à un des sommets du triangle. Quitte à renommer les sommets supposons que $a = 9$.
+
+On a $T = a + b + c = 9$. Donc $9 + b + c = 9$. Donc $b + c = 0$.
+
+Or tous les nombres placés sur le triangle sont strictement positifs. Contradiction !
+
+Donc, il n'existe pas de triangle $18$-magique.
 
 
 ===
 
 ====
+Montrons que s'il existe un triangle $19$-magique, alors $7$ est nécessairement situé sur un sommet du triangle.
+
+Supposons par l'absurde qu'il existe un triangle $19$-magique.
+Soit $a, b, c$ les sommets du triangle.
+
+Supposons par l'absurde que $7$ n'appartient à aucun des sommets du triangle. Alors il existe (quitte à renommer les sommets) un côté avec pour nombres $a, 7, x, b$ (pas forcément dans cet ordre là).
+Donc $S = a + 7 + x + b$. Or, $S = 19$.
+
+Donc $a + x + b = 12$.
+Or, d'après la *2.c)*, $T = 12$. Donc $a + b + c = 12$.
+
+Donc $a + x + b = a + b + c$. Donc $x = c$. Or, tous les nombres placés sur le triangle sont distincts. Contradiction !
+
+Donc dans un triangle $19$-magique, $7$ appartient nécessairement à un des sommets du triangle.
 
 ====
 Voici un triangle $19$-magique :
@@ -315,5 +350,56 @@ Voici un triangle $19$-magique :
   $3$, $9$, $5$,
   $2$, $6$, $4$
 )
+
+===
+Montrons que s'il existe un triangle $S$-magique alors il existe aussi un triangle $(40 - S)$-magique.
+
+Supposons qu'il existe un triangle $S$-magique de la forme suivante :
+
+#triangle-magique(
+  $n_1$, $n_2$, $n_3$,
+  $n_4$, $n_5$, $n_6$,
+  $n_7$, $n_8$, $n_9$
+)
+
+On a donc $S = n_1 + n_2 + n_3 + n_4 = n_4 + n_5 + n_6 + n_7 = n_7 + n_8 + n_9 + n_1$
+
+Montrons que le triangle suivant est $(40 - S)$-magique (et valide) :
+
+#triangle-magique(
+  $10 - n_1$, $10 - n_2$, $10 - n_3$,
+  $10 - n_4$, $10 - n_5$, $10 - n_6$,
+  $10 - n_7$, $10 - n_8$, $10 - n_9$
+)
+
+Tout d'abord calculons les sommes $S_1, S_2, S_3$ de chaque côté :
+
+$S_1 = (10 - n_1) + (10 - n_2) + (10 - n_3) + (10 - n_4) = 40 - (n_1 + n_2 + n_3 + n_4) =^#text[déf] 40 - S$
+
+$S_2 = (10 - n_4) + (10 - n_5) + (10 - n_6) + (10 - n_7) = 40 - (n_4 + n_5 + n_6 + n_7) =^#text[déf] 40 - S$
+
+$S_3 = (10 - n_7) + (10 - n_8) + (10 - n_9) + (10 - n_1) = 40 - (n_7 + n_8 + n_9 + n_1) =^#text[déf] 40 - S$
+
+Nous avons donc bien $S_1 = S_2 = S_3 = 40 - S$.
+
+Donc le triangle est $(40 - S)$-magique.
+
+Montrons maintenant que le triangle est valide :
+
+Soit $i in ⟦1, 9⟧$.
+Nous avons $1 <= n_i <= 9$
+
+Donc $-1 >= -n_i >= -9$. Ainsi, $10 - 1 >= 10 - n_i >= 10 - 9$. Donc $1 <= 10 - n_i <= 9$.
+
+Donc nous avons bien le fait que chaque nombre de notre nouveau triangle est bien compris entre $1$ et $9$.
+
+De plus, chaque nombre est bien distinct, en effet :
+
+Supposons qu'il existe deux indices $i$ et $j$ tels que $10 - n_i = 10 - n_j$. Alors $n_i = n_j$. Contradiction ! Tous les nombres de notre nouveau triangle sont bien distincts.
+
+Nous avons donc réussi à construire un triangle $40 - S$-magique valide pour chaque triangle $S$-magique.
+Il existe donc bien au moins un triangle $40 - S$-magique pour chaque triangle $S$-magique.
+
+
 
 ]
