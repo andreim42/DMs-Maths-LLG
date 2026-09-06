@@ -400,6 +400,25 @@ Supposons qu'il existe deux indices $i$ et $j$ tels que $10 - n_i = 10 - n_j$. A
 Nous avons donc réussi à construire un triangle $40 - S$-magique valide pour chaque triangle $S$-magique.
 Il existe donc bien au moins un triangle $40 - S$-magique pour chaque triangle $S$-magique.
 
+===
+Récapitulons les résultats obtenus grâce à toutes les questions intermédiaires :
 
+#table(
+  columns: 3,
+  rows: 7,
+  stroke: 1pt,
+  [$S$], [$T$], [triangle $S$-magique existant ?],
+  [< 17], [$T$], [Non ! cf *2.b)*],
+  [17], [6], [Oui ! cf *3)*],
+  [18], [9], [Non ! cf *4)*],
+  [19], [12], [Oui ! cf *5.b)*],
+  [20], [15], [Oui ! cf *1)*],
+  [21], [18], [Oui ! Il existe un triangle $19$-magique et d'après la *6)* il existe aussi un triangle $21$-magique.],
+  [22], [21], [Non ! Il n'existe pas de triangle $18$-magique et d'après la contraposée de la $6)$ il n'existe pas de triangle $22$-magique.],
+  [23], [24], [Oui ! Il existe un triangle $17$-magique et d'après la *6)* il existe aussi un triangle $23$-magique.],
+  [> 23], [$T$], [Non ! cf *2.b)*]
+)
+
+#align(center)[*Merci pour la lecture de ce devoir !*]
 
 ]
