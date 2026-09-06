@@ -152,11 +152,56 @@ Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques 
 == Questions préliminaires 
 === La plus petite valeur pour leur somme est 6 : 
 
-$1 + 2 +3 = #strong[6]$
+On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à {1,...,9}
 
-=== La plus grande valeur pour leur somme est 24 : 
+On suppose par l'absurde qu'il existe trois entiers naturels distincts $a$, $b$, $c$ tels que
+$S=a+b+c <= 5$
 
-$9 +8+7 = #strong[24]$
+Comme $a,b,c$ sont trois entiers naturels #strong[distincts], les seules trois valeurs possibles sont $1,2,3$. On a donc nécessairement : 
+$S=a+b+c>=1+2+3=6$
+ce qui contredit $S<=5$
+
+Ainsi $S>5$
+
+Donc 6 est minorant de l'ensemble des valeurs possibles de $S$
+
+#strong[Synthèse :]
+
+
+On verifie maintenant que ce minorant est effectivement atteint. En prenant : 
+
+$a=1,$   $b=2$,  $c=3$
+
+On obtient : 
+$S=1+2+3=6$
+
+On a donc $min(S)=6$
+
+ === La plus grande valeur pour leur somme est 24 : 
+
+On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à {1,...,9}
+
+On suppose par l'absurde qu'il existe trois entiers naturels distincts $a$, $b$, $c$ tels que
+$S=a+b+c >= 25$
+
+Comme $a,b,c$ sont trois entiers naturels #strong[distincts], les seules trois valeurs les plus grandes sont $7,8, 9$. On a donc nécessairement : 
+$S=a+b+c<=7+8+9=24$
+
+Ce qui contredit $S>=25$
+
+Donc S < 25
+Ainsi 24 est majorant de l'ensemble des valeurs possibles de $S$ 
+
+#strong[Synthèse :]
+
+On verifie maintenant que ce majorant est effectivement atteint. En prenant : 
+
+$a=7,$   $b=8$,  $c=9$
+
+On obtient : 
+$S=7+8+9=24$
+
+On a donc $max(S)=24$
 
 == Les triangles magiques
 
