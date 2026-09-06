@@ -1,0 +1,10 @@
+$cal(P)$,$cal(Q)$,$cal(P) ==> cal(Q)$,$cal(P) and (cal(P) ==> cal(Q))$,$(cal(P) and (cal(P) ==> cal(Q))) ==> cal(Q)$
+V,V,V,V,V
+V,F,F,F,V
+V,I,I,I,V
+F,V,V,F,V
+F,F,V,F,V
+F,I,V,F,V
+I,V,V,I,V
+I,F,I,I,I
+I,I,V,I,V

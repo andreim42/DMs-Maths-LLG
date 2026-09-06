@@ -57,7 +57,8 @@
 
 = Logique de Łukasiewicz
 
-===
+=== Propriétés de $and$ et $or$.
+
 Soient $cal(P), cal(Q), cal(R)$ des assertions.
 
 ====
@@ -117,13 +118,14 @@ $
 ((cal(P) and cal(Q)) and cal(R)) &<==> not(not(cal(P) and cal(Q)) or not cal(R)) #h(2em) &#text[d'après la *c)*] \
 &<==> not((not cal(P) or not cal(Q)) or not cal(R)) \
 &<==> not(not cal(P) or (not cal(Q) or not cal(R))) &#text[d'après la *a)*] \
-&<==> not(not cal(P) or (cal(Q) and cal(R))) \
+&<==> not(not cal(P) or not(cal(Q) and cal(R))) \
 &<==> cal(P) and (cal(Q) and cal(R)) \
 $
 
 Donc les assertions $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) and cal(R)))$ sont bien équivalentes.
 
-===
+=== Propriétés de l'implication.
+
 Soient $cal(P), cal(Q), cal(R)$ des assertions.
 
 ====
@@ -133,7 +135,7 @@ Montrons que $not cal(P) or cal(Q)$ est équivalente à $cal(P) => cal(Q)$ grâc
   #affiche-csv("tables/2a.csv")
 ]
 
-Les colonnes $not cal(P) or cal(Q)$ et $cal(P) => cal(Q)$ ne sont pas identiques donc les deux assertions ne sont sont pas équivalentes.
+Les colonnes $not cal(P) or cal(Q)$ et $cal(P) ==> cal(Q)$ ne sont pas identiques donc les deux assertions ne sont sont pas équivalentes.
 
 ====
 Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ grâce à leurs tables de vérités.
@@ -145,6 +147,49 @@ Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ 
 Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques donc les deux assertions sont bien équivalentes. La méthode de démonstration par contraposition est donc utilisable dans $cal(L)_3$
 
 ==== 
+Montrons que $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ à l'aide de leurs tables de vérité :
+
+#align(center)[
+  #affiche-csv("tables/2c.csv")
+]
+
+On remarque qu'il existe un cas où l'assertion $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ prend la valeur de vérité I, l'assertion est donc fausse.
+
+===
+
+====
+#align(center)[
+  #affiche-csv("tables/3a.csv")
+]
+
+On voit que $cal(P) or not cal(P)$ n'est pas toujours vraie grâce à la table de vérité ci-contre.
+
+L'énoncé $cal(P) or not cal(P)$ n'est donc pas une tautologie dans $cal(L)_3$.
+
+Il n'est donc pas possible de raisonner par l'absurde dans $cal(L)_3$.
+En effet, si on suppose que $not cal(P)$, et que l'on obtient une contradiction on ne peut pas en conclure que $cal(P)$ car elle peut également être indéterminée.
+
+====
+Le principe de raisonnement par déduction dans $cal(L)_2$ repose sur le principe d'inférence :
+
+$(cal(P) and (cal(P) ==> cal(Q))) ==> cal(Q)$.
+Vérifions si ce dernier est vérifié dans $cal(L)_3$.
+
+#align(center)[
+  #affiche-csv("tables/3b.csv")
+]
+
+On remarque que la colonne correspondant au principe d'inférence comporte un cas où il prend la valeur de vérité I, donc celui-ci n'est plus vérifié dans $cal(L)_3$.
+
+====
+Déterminons si l'énoncé $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ est une tautologie dans $cal(L)_3$, à l'aide d'une table de vérité :
+
+#align(center)[
+  #affiche-csv("tables/3c.csv")
+]
+
+On remarque dans la table de vérité que la colonne correspondant à $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ ne comporte pas que du V.
+Par conséquent, $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ n'est pas une tautologie dans $cal(L)_3$.
 
 = Triangles magiques 
 
@@ -272,4 +317,3 @@ Voici un triangle $19$-magique :
 )
 
 ]
-
