@@ -1,4 +1,4 @@
-$cal(P)$,$cal(Q)$,$not cal(P)$,$cal(P) => cal(Q)$,$not cal(P) => cal(Q)$,$(cal(P) => cal(Q)) and (not cal(P) => cal(Q))$,$((cal(P) => cal(Q)) and (not cal(P)) => cal(Q))) => cal(Q)$
+$cal(P)$,$cal(Q)$,$not cal(P)$,$cal(P) ==> cal(Q)$,$not cal(P) ==> cal(Q)$,$(cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))$,$((cal(P) ==> cal(Q)) and (not cal(P)) ==> cal(Q))) ==> cal(Q)$
 V,V,F,V,V,V,V
 V,F,F,F,V,F,V
 V,I,F,I,V,I,V

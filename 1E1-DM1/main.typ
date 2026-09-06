@@ -147,13 +147,13 @@ Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ 
 Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques donc les deux assertions sont bien équivalentes. La méthode de démonstration par contraposition est donc utilisable dans $cal(L)_3$
 
 ==== 
-Montrons que $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ à l'aide de leurs tables de vérité :
+Montrons que nous n'avons pas $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ à l'aide de sa table de vérité :
 
 #align(center)[
   #affiche-csv("tables/2c.csv")
 ]
 
-On remarque qu'il existe un cas où l'assertion $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ prend la valeur de vérité I, l'assertion est donc fausse.
+On remarque qu'il existe un cas où l'assertion $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ prend la valeur de vérité I, l'assertion n'est donc pas une tautologie.
 
 ===
 
@@ -170,7 +170,7 @@ Il n'est donc pas possible de raisonner par l'absurde dans $cal(L)_3$.
 En effet, si on suppose que $not cal(P)$, et que l'on obtient une contradiction on ne peut pas en conclure que $cal(P)$ car elle peut également être indéterminée.
 
 ====
-Le principe de raisonnement par déduction dans $cal(L)_2$ repose sur le principe d'inférence :
+Le raisonnement par déduction dans $cal(L)_2$ repose sur le principe d'inférence (_modus ponens_) :
 
 $(cal(P) and (cal(P) ==> cal(Q))) ==> cal(Q)$.
 Vérifions si ce dernier est vérifié dans $cal(L)_3$.
@@ -197,59 +197,56 @@ Par conséquent, $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ 
 == Questions préliminaires 
 
 ===
-La plus petite valeur pour leur somme est 6 : 
+La plus petite valeur pour leur somme est $6$ : 
 
-On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à {1,...,9}
+On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à ${1, dots ,9}$
 
 On suppose par l'absurde qu'il existe trois entiers naturels distincts $a$, $b$, $c$ tels que
 $S=a+b+c <= 5$
 
-Comme $a,b,c$ sont trois entiers naturels #strong[distincts], les seules trois valeurs possibles sont $1,2,3$. On a donc nécessairement : 
+Comme $a,b,c$ sont trois entiers naturels *distincts*, les seules trois valeurs possibles sont $1,2,3$. On a donc nécessairement : 
 $S=a+b+c>=1+2+3=6$
 ce qui contredit $S<=5$
 
-Ainsi $S>5$
+Ainsi $S>5$ Donc $6$ est minorant de l'ensemble des valeurs possibles de $S$
 
-Donc 6 est minorant de l'ensemble des valeurs possibles de $S$
-
-#strong[Synthèse :]
+#underline[*Synthèse :*]
 
 
 On vérifie maintenant que ce minorant est effectivement atteint. En prenant : 
-
 $a=1,$   $b=2$,  $c=3$
 
 On obtient : 
 $S=1+2+3=6$
 
-On a donc $min(S)=6$
+Donc 6 est le minimum de l'ensemble des valeurs possibles de $S$
 
 ===
-La plus grande valeur pour leur somme est 24 : 
+La plus grande valeur pour leur somme est $24$ : 
 
-On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à {1,...,9}
+On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à ${1, dots ,9}$
 
 On suppose par l'absurde qu'il existe trois entiers naturels distincts $a$, $b$, $c$ tels que
 $S=a+b+c >= 25$
 
-Comme $a,b,c$ sont trois entiers naturels *distincts*, les seules trois valeurs les plus grandes sont $7,8, 9$. On a donc nécessairement : 
+Comme $a,b,c$ sont trois entiers naturels *distincts*, les seules trois valeurs les plus grandes sont $7,8,9$. On a donc nécessairement : 
 $S=a+b+c<=7+8+9=24$
 
 Ce qui contredit $S>=25$
 
-Donc S < 25
-Ainsi 24 est majorant de l'ensemble des valeurs possibles de $S$ 
+Donc $S < 25$
+Ainsi $24$ est majorant de l'ensemble des valeurs possibles de $S$ 
 
-*Synthèse :*
+#underline[*Synthèse :*]
 
 On vérifie maintenant que ce majorant est effectivement atteint. En prenant : 
 
-$a=7,$   $b=8$,  $c=9$
+$a=7, b=8, c=9$
 
 On obtient : 
 $S=7+8+9=24$
 
-On a donc $max(S)=24$
+Donc $24$ est le maximum de l'ensemble des valeurs possibles de $S$
 
 == Les triangles magiques
 
@@ -420,5 +417,9 @@ Récapitulons les résultats obtenus grâce à toutes les questions intermédiai
 )
 
 #align(center)[*Merci pour la lecture de ce devoir !*]
+
+#align(center)[#align(bottom)[
+L'ensemble de nos devoirs maison, fichiers pdf et codes seront disponibles sur : \ #link("https://github.com/andreim42/DMs-Maths-LLG")
+]]
 
 ]
