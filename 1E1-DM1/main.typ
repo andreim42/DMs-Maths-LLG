@@ -133,9 +133,7 @@ Montrons que $not cal(P) or cal(Q)$ est équivalente à $cal(P) => cal(Q)$ grâc
   #affiche-csv("tables/2a.csv")
 ]
 
-Les colonnes $not cal(P) or cal(Q)$ et $cal(P) => cal(Q)$ sont identiques donc les deux assertions sont bien équivalentes.
-
-*[Note, Andrei pour Zéphyr : A CORRIGER, ce n'est en fait pas vrai]*
+Les colonnes $not cal(P) or cal(Q)$ et $cal(P) => cal(Q)$ ne sont pas identiques donc les deux assertions ne sont sont pas équivalentes.
 
 ====
 Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ grâce à leurs tables de vérités.
@@ -144,7 +142,7 @@ Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ 
   #affiche-csv("tables/2b.csv")
 ]
 
-Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques donc les deux assertions sont bien équivalentes.
+Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques donc les deux assertions sont bien équivalentes. La méthode de démonstration par contraposition est donc utilisable dans $cal(L)_3$
 
 ====
 
