@@ -100,29 +100,29 @@ De plus, les deux colonnes $not(cal(P) and cal(Q))$ et $not cal(P) or not cal(Q)
 Ainsi, les lois de De Morgan restent vérifiées dans $cal(L)_3$.
 
 ====
-Montrons la commutativité et l'associativité du "et" dans $cal(L)_3$.
+Montrons la commutativité et l'associativité du "ou" dans $cal(L)_3$.
 
-- Montrons que $(cal(P) and cal(Q)) <==> (cal(Q) and cal(P))$ :
-
-$
-(cal(P) and cal(Q)) &<==> not(not cal(P) or not cal(Q)) #h(2em) &#text[d'après la *c)*] \
-&<==> not(not cal(Q) or not cal(P)) &#text[d'après la *a)*] \
-&<==> (cal(Q) and cal(P))
-$
-
-Donc les assertions $cal(P) and cal(Q)$ et $cal(Q) and cal(P)$ sont bien équivalentes.
-
-- Montrons que $((cal(P) and cal(Q)) and cal(R)) <==> (cal(P) and (cal(Q) and cal(R)))$ :
+- Montrons que $(cal(P) or cal(Q)) <==> (cal(Q) or cal(P))$ :
 
 $
-((cal(P) and cal(Q)) and cal(R)) &<==> not(not(cal(P) and cal(Q)) or not cal(R)) #h(2em) &#text[d'après la *c)*] \
-&<==> not((not cal(P) or not cal(Q)) or not cal(R)) \
-&<==> not(not cal(P) or (not cal(Q) or not cal(R))) &#text[d'après la *a)*] \
-&<==> not(not cal(P) or not(cal(Q) and cal(R))) \
-&<==> cal(P) and (cal(Q) and cal(R)) \
+(cal(P) or cal(Q)) &<==> not(not cal(P) and not cal(Q)) #h(2em) &#text[d'après la *c)*] \
+&<==> not(not cal(Q) and not cal(P)) &#text[d'après la *a)*] \
+&<==> (cal(Q) or cal(P))
 $
 
-Donc les assertions $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) and cal(R)))$ sont bien équivalentes.
+Donc les assertions $cal(P) or cal(Q)$ et $cal(Q) or cal(P)$ sont bien équivalentes.
+
+- Montrons que $((cal(P) or cal(Q)) or cal(R)) <==> (cal(P) or (cal(Q) or cal(R)))$ :
+
+$
+((cal(P) or cal(Q)) or cal(R)) &<==> not(not(cal(P) or cal(Q)) and not cal(R)) #h(2em) &#text[d'après la *c)*] \
+&<==> not((not cal(P) and not cal(Q)) and not cal(R)) \
+&<==> not(not cal(P) and (not cal(Q) and not cal(R))) &#text[d'après la *a)*] \
+&<==> not(not cal(P) and not(cal(Q) or cal(R))) \
+&<==> cal(P) or (cal(Q) or cal(R)) \
+$
+
+Donc les assertions $((cal(P) or cal(Q)) or cal(R))$ et $(cal(P) or (cal(Q) or cal(R)))$ sont bien équivalentes.
 
 === Propriétés de l'implication.
 
@@ -135,7 +135,7 @@ Montrons que $not cal(P) or cal(Q)$ n'est pas équivalente à $cal(P) => cal(Q)$
   #affiche-csv("tables/2a.csv")
 ]
 
-Les colonnes $not cal(P) or cal(Q)$ et $cal(P) ==> cal(Q)$ ne sont pas identiques donc les deux assertions ne sont sont pas équivalentes.
+Les colonnes $not cal(P) or cal(Q)$ et $cal(P) ==> cal(Q)$ ne sont pas identiques donc les deux assertions ne sont sont plus équivalentes dans $cal(L)_3$.
 
 ====
 Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ grâce à leurs tables de vérités.
@@ -162,12 +162,12 @@ On remarque qu'il existe un cas où l'assertion $((cal(P) ==> cal(Q)) and (cal(Q
   #affiche-csv("tables/3a.csv")
 ]
 
-On voit que $cal(P) or not cal(P)$ n'est pas toujours vraie grâce à la table de vérité ci-contre.
+On voit que $cal(P) or not cal(P)$ n'est pas toujours vraie grâce à la table de vérité ci-dessus.
 
 L'énoncé $cal(P) or not cal(P)$ n'est donc pas une tautologie dans $cal(L)_3$.
 
 Il n'est donc pas possible de raisonner par l'absurde dans $cal(L)_3$.
-En effet, si on suppose que $not cal(P)$, et que l'on obtient une contradiction on ne peut pas en conclure que $cal(P)$ car elle peut également être indéterminée.
+En effet, si on suppose que $not cal(P)$, et que l'on obtient une contradiction on ne peut pas en conclure que $cal(P)$ est vraie car elle peut également être indéterminée.
 
 ====
 Le raisonnement par déduction dans $cal(L)_2$ repose sur le principe d'inférence (_modus ponens_) :
@@ -224,7 +224,7 @@ Donc 6 est le minimum de l'ensemble des valeurs possibles de $S$
 ===
 La plus grande valeur pour leur somme est $24$ : 
 
-On cherche un minorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à ${1, dots ,9}$
+On cherche un majorant de $S = a+b+c$ où $a,b,c$ sont trois entiers naturels distincts appartenant à ${1, dots ,9}$
 
 On suppose par l'absurde qu'il existe trois entiers naturels distincts $a$, $b$, $c$ tels que
 $S=a+b+c >= 25$
@@ -301,7 +301,7 @@ Voici un triangle $17$-magique :
 ===
 Montrons par l'absurde qu'il n'existe pas de triangle $18$-magique :
 
-Supposons par l'absurde qu'il existe un triangle $18$-magique.
+Supposons qu'il existe un triangle $18$-magique.
 Soit $a, b, c$ les sommets du triangle.
 
 Supposons par l'absurde que $9$ n'appartient à aucun des sommets du triangle. Alors il existe (quitte à renommer les sommets) un côté avec pour nombres $a, 9, x, b$ (pas forcément dans cet ordre là).
@@ -326,7 +326,7 @@ Donc, il n'existe pas de triangle $18$-magique.
 ====
 Montrons que s'il existe un triangle $19$-magique, alors $7$ est nécessairement situé sur un sommet du triangle.
 
-Supposons par l'absurde qu'il existe un triangle $19$-magique.
+Supposons qu'il existe un triangle $19$-magique.
 Soit $a, b, c$ les sommets du triangle.
 
 Supposons par l'absurde que $7$ n'appartient à aucun des sommets du triangle. Alors il existe (quitte à renommer les sommets) un côté avec pour nombres $a, 7, x, b$ (pas forcément dans cet ordre là).
@@ -338,6 +338,8 @@ Or, d'après la *2.c)*, $T = 12$. Donc $a + b + c = 12$.
 Donc $a + x + b = a + b + c$. Donc $x = c$. Or, tous les nombres placés sur le triangle sont distincts. Contradiction !
 
 Donc dans un triangle $19$-magique, $7$ appartient nécessairement à un des sommets du triangle.
+
+#pagebreak()
 
 ====
 Voici un triangle $19$-magique :
