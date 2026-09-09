@@ -413,7 +413,7 @@ Récapitulons les résultats obtenus grâce à toutes les questions intermédiai
   [19], [12], [Oui ! cf *5.b)*],
   [20], [15], [Oui ! cf *1)*],
   [21], [18], [Oui ! Il existe un triangle $19$-magique et d'après la *6)* il existe aussi un triangle $21$-magique.],
-  [22], [21], [Non ! Il n'existe pas de triangle $18$-magique et d'après la contraposée de la $6)$ il n'existe pas de triangle $22$-magique.],
+  [22], [21], [Non ! Il n'existe pas de triangle $18$-magique et d'après la contraposée de la *6)* il n'existe pas de triangle $22$-magique.],
   [23], [24], [Oui ! Il existe un triangle $17$-magique et d'après la *6)* il existe aussi un triangle $23$-magique.],
   [> 23], [$T$], [Non ! cf *2.b)*]
 )
