@@ -17,7 +17,15 @@
         header: align(right)[#text(size: 9pt, fill: luma(100))[#classe]],
         footer: context {
             set align(center)
-            text(size: 10pt)[\- #counter(page).display("1 / 1", both: true) \-]
+            text(size: 10pt)[\- #counter(page).display((act, total) => {
+                let strAct = if act == 8 { $tau$ } else { str(act) }
+                let strTotal = if total == 8 { $tau$ } else { str(total) }
+                if act == 8 or total == 8 {
+                    [#strAct / #strTotal]
+                } else {
+                    strAct + " / " + strTotal
+                }
+            }, both: true) \-]
         }
     )
 
