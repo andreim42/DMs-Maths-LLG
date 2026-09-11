@@ -73,29 +73,31 @@ En choisissant $m=n$, on a $g(2n) = 2g(n)$, donc si $n = 0, g(0)=0$.
 Donc $g(0) = 0 or g(0) = 1$ 
 
 ====
-Supposons que $g(0) = 0$ et montrons que g est la fonction nulle.
+Soit $m in NN$
 
-*1er cas*: 
-Si $m=0$
+Supposons que $g(0) = 0$ et montrons que g est la fonction nulle par récurrence.
 
-Alors $g(m)=g(0)=0$
+*Initialisation*: 
 
-Donc g est la fonction nulle.
+$m=0 ==> g(m)=g(0)=0$
 
-*2ème cas*:
-Si $m eq.not 0$,
+*Hérédité*:
 
-$m$ peut s'écrire sous la forme $m=m_1+m_1^'$, donc $g(m)=g(m_1+m_1^')= g(m_1) times g(m_1^')$, avec $m_1, m_1^' in NN$
+Soit $n in NN$.
 
-Or, $m_1$ et $m_1^'$ peuvent eux aussi s'écrire sous la forme $m = m_1 + m_1^'$, 
-donc $m= m_1+m_1^' = (m_2+m_2^')+(m_3+m_3^')$, 
+Supposons $g(n)=0$ et montrons que $g(n+1)=0$.
 
-Donc $g(m)=g(m_1+m_1^')=(g(m_2) times g(m_2^')) times (g(m_3) times g(m_3^'))$, avec $m_2, m_2^', m_3, m_3^' in NN$
+$g(n+1)$ peut s'écrire sous la forme $g(n) times g(1)$.
 
-On peut décomposer $m$ ainsi, jusqu'à obtenir une décomposition avec un des termes égal à $0$, et donc obtenir 
-$g(m)=g(m_1) times g(m_1^') = (g(m_2) times g(m_2^')) times (g(m_3) times g(m_3^'))= ... =(g(m_n) times g(m_n^')) times ... times (g(m_p) times g(m_p^'))$, avec l'un des termes égal à $0$.
+$1$ peut se décomposer en $1+0$, donc $g(1)=g(1+0)=g(1) times g(0)$.
 
-Donc $forall m in NN, g(m)=0$
+Or, $g(0)=0$, donc $g(1)=g(1) times 0=0$.
+
+Donc $g(n+1)=g(n) times 0 = 0$.
+
+Donc $forall n in NN, g(n)=0$.
+
+Donc $g$ est la fonction nulle.
 
 ====
 
