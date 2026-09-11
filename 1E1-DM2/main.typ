@@ -63,9 +63,8 @@ $forall m, n in NN, g(m+n) = g(M) times g(n)$.
 
 ===
 $italic("Analyse")$ : on suppose qu'il existe une telle fonction $g$. 
-====
-Soit $m,n in NN$.
 
+====
 En choisissant $m=0$, on a $g(n) = g(0) times g(n)$
 donc $g(0) = 1 or g(n)=1$.
 
@@ -74,6 +73,29 @@ En choisissant $m=n$, on a $g(2n) = 2g(n)$, donc si $n = 0, g(0)=0$.
 Donc $g(0) = 0 or g(0) = 1$ 
 
 ====
+Supposons que $g(0) = 0$ et montrons que g est la fonction nulle.
+
+*1er cas*: 
+Si $m=0$
+
+Alors $g(m)=g(0)=0$
+
+Donc g est la fonction nulle.
+
+*2ème cas*:
+Si $m eq.not 0$,
+
+$m$ peut s'écrire sous la forme $m=m_1+m_1^'$, donc $g(m)=g(m_1+m_1^')= g(m_1) times g(m_1^')$, avec $m_1, m_1^' in NN$
+
+Or, $m_1$ et $m_1^'$ peuvent eux aussi s'écrire sous la forme $m = m_1 + m_1^'$, 
+donc $m= m_1+m_1^' = (m_2+m_2^')+(m_3+m_3^')$, 
+
+Donc $g(m)=g(m_1+m_1^')=(g(m_2) times g(m_2^')) times (g(m_3) times g(m_3^'))$, avec $m_2, m_2^', m_3, m_3^' in NN$
+
+On peut décomposer $m$ ainsi, jusqu'à obtenir une décomposition avec un des termes égal à $0$, et donc obtenir 
+$g(m)=g(m_1) times g(m_1^') = (g(m_2) times g(m_2^')) times (g(m_3) times g(m_3^'))= ... =(g(m_n) times g(m_n^')) times ... times (g(m_p) times g(m_p^'))$, avec l'un des termes égal à $0$.
+
+Donc $forall m in NN, g(m)=0$
 
 ====
 
