@@ -13,8 +13,8 @@
 = Équations fonctionnelles
 
 ==
-On cherche À déterminer toutes les fonctions $g : NN -> NN$ telles que : \
-$forall m, n in NN, g(m+n) = g(M) times g(n)$.
+On cherche à déterminer toutes les fonctions $g : NN -> NN$ telles que : \
+$forall m, n in NN, g(m+n) = g(m) times g(n)$.
 
 ===
 _Analyse_ : on suppose qu'il existe une telle fonction $g$. 
@@ -39,9 +39,9 @@ Pour $n=0, g(n)=g(0)=0$
 
 Soit $n in NN$.
 
-Supposons $g(n)=0$ et montrons que $g(n+1)=0$
+Supposons que $g(n)=0$ et montrons que $g(n+1)=0$
 
-$g(n+1)$ peut s'écrire sous la forme $g(n) times g(1)$.
+$g(n+1)=g(n) times g(1)$.
 
 $1$ peut se décomposer en $1+0$, donc $g(1)=g(1+0)=g(1) times g(0)$
 
@@ -51,10 +51,13 @@ Donc $g(n+1)=g(n) times 0 = 0$
 
 - #underline[*Conclusion*] : Donc $forall n in NN, g(n)=0$, d'après le principe de récurrence.
 
-Donc $g$ est la fonction nulle.
+Donc $g$ est la fonction nulle. \
+
+\
 
 ====
-Montrons que $forall n in NN, g(0)=1 ==> g(n)=a^n #text("où") a=g(1)$ par récurrence.
+Supposons que $g(0) = 1$\
+Montrons que $forall n in NN, g(0)=1 ==> g(n)=a^n #text("où") a=g(1)$ par récurrence.\
 
 - #underline[*Initialisation*] :
 
@@ -115,8 +118,8 @@ _Analyse_: On suppose qu'une telle fonction $f$ existe.
 
 ====
 $
-f(m+n)=f(m) times f(n) + f(n) + f(m) <==>
-f(m+n) = (f(m)+1)(f(n)+1)-1
+f(m+n)&=f(m) times f(n) + f(n) + f(m)\
+&= (f(m)+1)(f(n)+1)-1
 $
 
 Si $m=n=0$, alors $f(0)=f(0)^2+2f(0)$
@@ -125,7 +128,7 @@ Donc $-f(0)=f(0)^2$
 
 Donc $f(0)=-f(0)^2$
 
-Donc $f(0)=0$
+Donc $f(0)=0$ car $f(0) in NN$
 ====
 Si $m=n=1$, alors
 
@@ -194,7 +197,7 @@ Posons
 $f : &NN -> NN\
 &x mapsto 2^x-1$
 
-Soit $m, n, x in NN$, tels que $m+n=x$
+Soient $m, n, x in NN$, tels que $m+n=x$
 
 $
 f(x)&=f(m+n)\
@@ -203,7 +206,9 @@ f(x)&=f(m+n)\
 &=(f(n)+1) times (f(m)+1) -1\
 &=f(n) times f(m) + f(n)+ f(m)+1-1\
 &=f(n) times f(m) + f(n)+ f(m)
-$
+$\
+De plus, $f(1)=2^1-1=1$
+
 
 _Conclusion:_\
 La fonction \
@@ -216,7 +221,8 @@ est la seule fonction $f : &NN -> NN$ telle que $f(m+n)=f(m) times f(n)+ f(n)+f(
 = Nombres échangeables
 
 ===
-Choisissons $a = 3$ et $b = -2$, on a alors $f_(3, -2) (3) = 3 - sqrt(3 - 2) = 2$ et $f_(3, -2)(2) = 3 - sqrt(2 - 2) = 3$. Donc $2$ et $3$ sont bien échangeables.
+Choisissons $a = 3$ et $b = -2$, on a alors $f_(3, -2) (3) = 3 - sqrt(3 - 2) = 2$ et $f_(3, -2)(2) = 3 - sqrt(2 - 2) = 3$.\ 
+Donc $2$ et $3$ sont bien échangeables.
 
 ===
 Soient $a, b in RR$. Soient $x, y in [-b, +infinity[$. Supposons que $x$ et $y$ sont échangeables, i.e. on a que $f_(a, b)(x) = y$ et $f_(a, b)(y) = x$.
