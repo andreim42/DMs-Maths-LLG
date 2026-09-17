@@ -20,10 +20,7 @@ $forall m, n in NN, g(m+n) = g(m) times g(n)$.
 _Analyse_ : Supposons qu'il existe une fonction $g : NN -> NN$ telle que $forall m, n in NN, g(m + n) = g(m) times g(n)$
 
 ====
-Posons $m = 0$, on a $g(n) = g(0) times g(n)$
-donc $g(0) = 1$ ou $g(n)=0$ pour tout $n$ dans $N$.
-
-Donc $g(0) = 0$ ou $g(0) = 1$ 
+Posons $m = n = 0$, on a $g(0) = g(0)^2$. Donc $g(0)(g(0) - 1) = 0$. Donc $g(0) = 0$ ou alors $g(0) = 1$.
 
 ====
 Supposons que $g(0) = 0$. Montrons que, dans ce cas, $g$ est la fonction nulle.
