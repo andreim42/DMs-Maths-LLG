@@ -35,7 +35,7 @@ Donc $g$ est bien la fonction nulle.
 ====
 Supposons que $g(0) = 1$. Posons $a = g(1)$.
 
-Montrons que $forall n in NN, g(0)=1 ==> g(n)=a^n #text("où")$ par récurrence.\
+Montrons par récurrence que pour tout $n in NN$, $g(n) = a^n$.
 
 - #underline[*Initialisation*] :
 
@@ -62,15 +62,15 @@ $
 _Synthese_ :
 Soit $m,n in NN$.
 
-- Posons #defunc($g$, $NN$, $NN$, $x$, $0$). On a alors :
+- Posons #defunc($g$, $NN$, $NN$, $n$, $0$). On a alors :
 
 $ g(m+n)=0 times 0 = g(m) times g(n) $
 
-- Posons désormais #defunc($g$, $NN$, $NN$, $x$, $g(1)^x$). On a alors :
+- Soit $a in NN$, posons désormais #defunc($g$, $NN$, $NN$, $n$, $a^n$). On a alors :
 
-$ m+n=x ==> g(m+n) = g(1)^(n+m) = g(1)^n times g(1)^m = g(n) times g(m) $
+$g(m+n) = a^(n+m) = a^n times a^m = g(n) times g(m) $
 
-Ainsi, les fonctions #defunc($g$, $NN$, $NN$, $x$, $0$) et #defunc($g$, $NN$, $NN$, $x$, $g(1)^x$) sont bien les seules solutions de l'équation fonctionnelle.
+Ainsi, les fonctions #defunc($g$, $NN$, $NN$, $n$, $0$) et #defunc($g$, $NN$, $NN$, $n$, $a^n$) avec $a in NN$ sont bien les seules solutions de cette équation fonctionnelle.
 
 ==
 On cherche à déterminer toutes les fonctions $f : NN -> NN$ telles que :\
@@ -140,7 +140,9 @@ g(m+n)&=f(m+n)+1\
 $
 
 ====
-On pose $g(n)=f(n)+1$ pour tout $n in NN$. On a alors :
+Soit $n in NN$. On pose $g(n)=f(n)+1$. On a donc $g(0) = f(0) + 1 = 1$.
+
+D'après la *Partie A*, nous avons donc $g(n) = a^n$ avec $a in NN$. Donc $g(1) = a^1 = a$. Ainsi :
 
 $
 f(n)&=g(n)-1\
@@ -150,7 +152,7 @@ f(n)&=g(n)-1\
 $
 
 ===
-_Synthèse_ : Posons #defunc($f$, $NN$, $NN$, $x$, $2^x - 1$)
+_Synthèse_ : Posons #defunc($f$, $NN$, $NN$, $n$, $2^n - 1$)
 
 Soient $m, n in NN$. On a alors :
 
@@ -195,13 +197,11 @@ De plus, $y - x = (y + b) - (x + b) = (sqrt(y + b) - sqrt(x + b))(sqrt(y + b) + 
 
 Donc $sqrt(y + b) + sqrt(x + b) =^(x != y) (y - x)/(sqrt(y + b) - sqrt(x + b)) = (y - x) / (y - x) = 1$
 
-Donc $0 <= y + b <= 1$ et $0 <= x + b <= 1$.
-Donc $0 >= -(x + b) >= -1$.
-Donc $-1 <= -(x + b) <= 0$.
+Donc $0 <= y + b <= 1$ et $0 <= x + b <= 1$, ainsi  $-1 <= (y + b) - (x + b) <= 1$.
 
 Donc $-1 <= y - x <= 1$. Donc $abs(x - y) <= 1$.
 
-Ainsi, dans tous les cas si $x$ et $y$ sont échangeables, alors $abs(x - y) <= 1$.
+Ainsi, si $x$ et $y$ sont échangeables, alors $abs(x - y) <= 1$.
 
 ===
 Soient $x, y in RR$. Supposons que $abs(x - y) <= 1$.
@@ -221,9 +221,9 @@ De plus, $y + b = y + k^2/4 - x = 1 - k + k^2/4 = (k^2 - 4k + 4)/4 = ((k - 2)/2)
 
 On a alors $f_(a, b)(x) = a - sqrt(x + b) = (y + k/2) - sqrt(x + (k^2)/4 - x) = y + k/2 - k/2 = y$ et
 
-$f_(a, b)(y) = a - sqrt(y + b) = (y + k/2) - sqrt(y + k^2/4 - x) = y + k/2 - sqrt((k^2 - 4k + 4)/4) = y + k/2 - sqrt((k - 2)^2/4) = y + k/2 - (2 - k)/2$
+$f_(a, b)(y) = a - sqrt(y + b) = (y + k/2) - sqrt(y + k^2/4 - x) = y + k/2 - sqrt((k^2 - 4k + 4)/4) = y + k/2 - sqrt((k - 2)^2/4) = y + k/2 - (2 - k)/2$ (car $y - x >= 0$ donc $k - 2 <= -1 < 0$, donc $sqrt((k - 2)^2) = |k - 2| = 2 - k$)
 
-$= y + (k - (2 - k))/2 = y + (2k - 2)/2 = y + k - 1 = y + 1 - y + x - 1 = x$.
+$f_(a, b)(y) = y + (k - (2 - k))/2 = y + (2k - 2)/2 = y + k - 1 = y + 1 - y + x - 1 = x$.
 
 Donc on a bien $f_(a, b)(x) = y$ et $f_(a, b)(y) = x$. Ainsi, $x$ et $y$ sont bien échangeables.
 
