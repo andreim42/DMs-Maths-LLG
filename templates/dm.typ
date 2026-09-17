@@ -134,14 +134,13 @@
     body
 }
 
-#let resultat(body) = {
-  box(
-    stroke: 0.6pt + black,
-    radius: 3pt,
-    inset: (x: 2pt, y: 7pt),
-    baseline: 30%,
-    fill: rgb("#fefefe"),
-    body
+#let defunc(name, from, to, var, image) = box(
+  baseline: 65%,
+  grid(
+    columns: (auto, auto),
+    column-gutter: 0.4em,
+    row-gutter: 0.5em,
+    $#name :$, $ #from &-> #to \
+                 #var  &mapsto #image $,
   )
-  h(0.2em)
-}
+)

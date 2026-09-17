@@ -1,4 +1,4 @@
-#import "../templates/dm.typ": dm, resultat
+#import "../templates/dm.typ": dm
 
 #dm(
   titre: "Logique. Triangles magiques",
