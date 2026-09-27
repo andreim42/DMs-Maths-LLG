@@ -43,6 +43,38 @@
         it
     }
 
+    let code-theme-path = "tokyonight_night.tmTheme"
+    show raw: it => {
+        // évite une boucle infinie (demandez à Thomas)
+        if it.theme == code-theme-path {
+          return it
+        }
+
+        if it.text.contains("\n") {
+          block(
+            fill: rgb("#1d2433"),
+            inset: 15pt,
+            radius: 15pt,
+            width: auto,
+            text(
+              fill: rgb("#a2aabc"),
+              size: 12pt,
+              raw(
+                theme: code-theme-path,
+                block: it.block,
+                lang: it.lang,
+                align: it.align,
+                syntaxes: it.syntaxes,
+                tab-size: it.tab-size,
+                it.text,
+              )
+            )
+          )
+        } else {
+          it
+        }
+    }
+
     set heading(numbering: (..nums) => {
         let pos = nums.pos()
         if pos.len() == 1 {
@@ -144,3 +176,36 @@
                  #var  &mapsto #image $,
   )
 )
+
+#let code(file-path, lang:"python", hide-calls:true, hide-imports: true) = {
+  let path = "../" + file-path
+
+  let code_file = read(path)
+
+  if hide-calls {
+    if lang == "python" {
+      code_file = code_file.trim(
+        regex(`if __name__ == "__main__":[\S\s]*`.text),
+        at: end,
+        repeat: false
+      )
+    }
+  }
+
+  if hide-imports {
+    if lang == "python" {
+      code_file = code_file.replace(
+        regex(`(?m)^(from|import)\b.*(\r?\n)?`.text),
+        ""
+      )
+    }
+  }
+
+  code_file = code_file.trim()
+
+  raw(
+    code_file,
+    lang: lang,
+    block: code_file.contains("\n")
+  )
+}
