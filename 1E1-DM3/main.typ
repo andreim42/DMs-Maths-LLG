@@ -136,13 +136,25 @@ $0 < b^2 <= b^2 &<==> 0 < b^2 <= (b^2 n)/n\ &<==> 0 < b^2 <= C/n$\
 Donc $exists C in RR^*_+, forall n in NN^*,space 0 < b^2 <= C/n$
 
 ===
-====
-Soit $x, y in RR$\
-Selon le 2) de l'exercice 1, on a $forall p in NN, floor(10^p times 1/(y-x))/10^p<=1/(y-x)<floor(10^p times 1/(y-x))/10^p+1/10^p$\
-Donc $1/(y-x)-floor(10^p times 1/(y-x))/10^p<1/10^p$\
-
-Donc $(10^p-(y-x) times floor(10^p times 1/(y-x)))/(10^p times (y-x))<1/10^p$
-====
+  ====
+  On a $x = floor(x)+a_1+a_2+a_3+ ... +a_(n-1)+a_n+a_(n+1)...$\
+  Et $y = floor(y)+b_1+b_2+b_3+ ... +b_(n-1)+b_n+b_(n+1)...$\
+  Posons $a = floor(x)+a_1+a_2+a_3+...+a_(n-1)+a_n+a_(n+1)+1/10^p$\
+  $x<y$ donc $exists n in NN, forall k in [|1, n-1|], a_k=b_k and a_n<b_n$\
+  Choisissons $p = n+1$.
+  Alors $a=floor(x)+a_1+a_2+a_3+ ... +a_(n-1)+a_n+(a_(n+1)+1)$\
+  Alors $exists n in NN, forall k in [|1, n-1|], a_k=a_k and a_k<a_k+1$ donc $x<a$\
+  $exists n in NN, forall k in [|1, n-1|], a_k=b_k and a_n<b_n$ donc $a<y$\
+  Donc $exists a in RR, x<a<y$
+  Donc $exists p in NN, 1/10^p<y-x$
+  ====
+  $x=floor(x)+a_1+a_2+a_3+ ... +a_(n-1)+a_n+a_(n+1)...$\
+  $a=floor(x)+a_1+a_2+a_3+...+a_(n-1)+a_n+(a_(n+1)+1)$\
+  
+  Donc $a = (floor(x)times 10^p +a_1times 10^(p-1)+a_2times 10^(p-2)+...+a_(p-1) times 10^(1)+a_p times 10^(0))/10^p$\ 
+  Donc $a in DD$\
+  Donc $forall x, y in RR, exists a in DD, x<a<y$\
+  Donc $DD$ est dense dans $RR$.
 
 ===
 
