@@ -1,7 +1,7 @@
 #import "../templates/dm.typ": dm, code
 
 #dm(
-  titre: "Équations fonctionnelles. Nombres échangeables",
+  titre: "Partie entière. Notion de densité",
   problems_name: "Exercice",
   numbers: true,
   auteurs: "BONNET Zéphyr, FERRAOUN Rayane, MELLIER Raphaël, MITROI Andrei",
