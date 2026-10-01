@@ -23,7 +23,8 @@ On a $(2pi)/7-1<floor((2pi)/7) <=(2pi)/7$\
 $(2pi)/7 approx 0,9$\
 Donc $floor((2pi)/7) = 0$
 
-Le programme ne marche pas sur $RR_-$.\
+Le programme ne marche pas sur $RR_-$. En effet, ``partent(``$-3.14$``)`` = $0$.
+
 Voici une proposition de correction:
 
 #code("1E1-DM3/1_1.py")

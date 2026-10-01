@@ -1,4 +1,4 @@
-def partent(x):
+def partent_corrige(x):
     n = 0
     if x >= 0:
         while n + 1 <= x:
@@ -9,6 +9,6 @@ def partent(x):
     return n
 
 if __name__ == "__main__":
-    assert(partent(2.5) == 2)
-    assert(partent(-3) == -3)
-    assert(partent(-3.14) == -4)
+    assert(partent_corrige(2.5) == 2)
+    assert(partent_corrige(-3) == -3)
+    assert(partent_corrige(-3.14) == -4)
