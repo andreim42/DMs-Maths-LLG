@@ -115,7 +115,6 @@ Or $r in QQ$ et $sqrt(2) in RR without QQ$, donc $a = r sqrt(2) in RR without QQ
 Donc $RR without QQ$ est dense dans $RR$
 
 ===
-
 ====
 Soit $a in RR^*_+$.
 Pour $n in NN^*$, on note $P(n)$ l'assertion : '$(1+a)^n >= 1+n a$'.

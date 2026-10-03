@@ -1,4 +1,4 @@
-#import "../templates/dm.typ": dm
+#import "../templates/dm.typ": dm, affiche-csv
 
 #dm(
   titre: "Logique. Triangles magiques",
@@ -8,26 +8,6 @@
   classe: $1^"ère"1$,
   numero: 1,
 )[
-
-#let traite-cellule(cell) = {
-  if cell.starts-with("$") {
-    eval(cell)
-  } else {
-    cell
-  }
-}
-
-#let affiche-csv(fichier) = {
-  let data = csv(fichier)
-
-  table(
-    columns: data.first().len(),
-
-    ..data.map(row =>
-      row.map(cell => traite-cellule(cell))
-    ).flatten(),
-  )
-}
 
 #import "@preview/fletcher:0.5.8": diagram, node, edge
 
@@ -65,7 +45,7 @@ Soient $cal(P), cal(Q), cal(R)$ des assertions.
 Montrons que $(cal(P) and cal(Q)) <==> (cal(Q) and cal(P))$ à l'aide de leurs tables de vérité #footnote[Toutes les tables de vérité de ce devoir ont été générés automatiquement par un module python réalisé par nos soins : #link("https://github.com/andreim42/truth-table-builder/")] :
 
 #align(center)[
-  #affiche-csv("tables/1a.csv")
+  #affiche-csv("1E1-DM1/tables/1a.csv")
 ]
 
 Les deux colonnes $(cal(P) and cal(Q))$ et $(cal(Q) and cal(P))$ sont identiques donc les deux assertions sont équivalentes.
@@ -74,7 +54,7 @@ Les deux colonnes $(cal(P) and cal(Q))$ et $(cal(Q) and cal(P))$ sont identiques
 Montrons que les assertions $((cal(P) and cal(Q)) and cal(R)) <==> (cal(P) and (cal(Q) and cal(R)))$ à l'aide de leurs tables de vérité :
 
 #align(center)[
-  #affiche-csv("tables/1b.csv")
+  #affiche-csv("1E1-DM1/tables/1b.csv")
 ]
 
 Les deux colonnes $((cal(P) and cal(Q)) and cal(R))$ et $(cal(P) and (cal(Q) and cal(R)))$ sont identiques donc les deux assertions sont équivalentes.
@@ -88,9 +68,9 @@ Montrons que $not(cal(P) or cal(Q)) <==> (not cal(P) and not cal(Q))$ et $not(ca
   #grid(
     columns: 2, gutter: 2em
   )[
-    #affiche-csv("tables/1c1.csv")
+    #affiche-csv("1E1-DM1/tables/1c1.csv")
   ][
-    #affiche-csv("tables/1c2.csv")
+    #affiche-csv("1E1-DM1/tables/1c2.csv")
   ]
 ]
 
@@ -132,7 +112,7 @@ Soient $cal(P), cal(Q), cal(R)$ des assertions.
 Montrons que $not cal(P) or cal(Q)$ n'est pas équivalente à $cal(P) => cal(Q)$ grâce à leurs tables de vérités.
 
 #align(center)[
-  #affiche-csv("tables/2a.csv")
+  #affiche-csv("1E1-DM1/tables/2a.csv")
 ]
 
 Les colonnes $not cal(P) or cal(Q)$ et $cal(P) ==> cal(Q)$ ne sont pas identiques donc les deux assertions ne sont sont plus équivalentes dans $cal(L)_3$.
@@ -141,7 +121,7 @@ Les colonnes $not cal(P) or cal(Q)$ et $cal(P) ==> cal(Q)$ ne sont pas identique
 Montrons que $cal(P) ==> cal(Q)$ est équivalente à $not cal(Q) => not cal(P)$ grâce à leurs tables de vérités.
 
 #align(center)[
-  #affiche-csv("tables/2b.csv")
+  #affiche-csv("1E1-DM1/tables/2b.csv")
 ]
 
 Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques donc les deux assertions sont bien équivalentes. La méthode de démonstration par contraposition est donc utilisable dans $cal(L)_3$
@@ -150,7 +130,7 @@ Les colonnes $cal(P) ==> cal(Q)$ et $not cal(Q) ==> not cal(P)$ sont identiques 
 Montrons que nous n'avons pas $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ à l'aide de sa table de vérité :
 
 #align(center)[
-  #affiche-csv("tables/2c.csv")
+  #affiche-csv("1E1-DM1/tables/2c.csv")
 ]
 
 On remarque qu'il existe un cas où l'assertion $((cal(P) ==> cal(Q)) and (cal(Q) ==> cal(R))) ==> (cal(P) ==> cal(R))$ prend la valeur de vérité I, l'assertion n'est donc pas une tautologie.
@@ -159,7 +139,7 @@ On remarque qu'il existe un cas où l'assertion $((cal(P) ==> cal(Q)) and (cal(Q
 
 ====
 #align(center)[
-  #affiche-csv("tables/3a.csv")
+  #affiche-csv("1E1-DM1/tables/3a.csv")
 ]
 
 On voit que $cal(P) or not cal(P)$ n'est pas toujours vraie grâce à la table de vérité ci-dessus.
@@ -176,7 +156,7 @@ $(cal(P) and (cal(P) ==> cal(Q))) ==> cal(Q)$.
 Vérifions si ce dernier est vérifié dans $cal(L)_3$.
 
 #align(center)[
-  #affiche-csv("tables/3b.csv")
+  #affiche-csv("1E1-DM1/tables/3b.csv")
 ]
 
 On remarque que la colonne correspondant au principe d'inférence comporte un cas où il prend la valeur de vérité I, donc celui-ci n'est plus vérifié dans $cal(L)_3$.
@@ -185,7 +165,7 @@ On remarque que la colonne correspondant au principe d'inférence comporte un ca
 Déterminons si l'énoncé $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ est une tautologie dans $cal(L)_3$, à l'aide d'une table de vérité :
 
 #align(center)[
-  #affiche-csv("tables/3c.csv")
+  #affiche-csv("1E1-DM1/tables/3c.csv")
 ]
 
 On remarque dans la table de vérité que la colonne correspondant à $((cal(P) ==> cal(Q)) and (not cal(P) ==> cal(Q))) ==> cal(Q)$ ne comporte pas que du V.

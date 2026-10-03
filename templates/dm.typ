@@ -157,7 +157,6 @@
     }
     
     show heading.where(level: 4): it => {
-        v(0.8em, weak: true)
         box(inset: (left: 1.5em))[
             #text(11pt, weight: "bold")[#counter(heading).display() #it.body]
         ]
@@ -176,6 +175,26 @@
                  #var  &mapsto #image $,
   )
 )
+
+#let traite-cellule(cell) = {
+  if cell.starts-with("$") {
+    eval(cell)
+  } else {
+    cell
+  }
+}
+
+#let affiche-csv(fichier) = {
+  let data = csv("../" + fichier)
+
+  table(
+    columns: data.first().len(),
+
+    ..data.map(row =>
+      row.map(cell => traite-cellule(cell))
+    ).flatten(),
+  )
+}
 
 #let code(file-path, lang:"python", hide-calls:true, hide-imports: true) = {
   let path = "../" + file-path
@@ -209,3 +228,8 @@
     block: code_file.contains("\n")
   )
 }
+
+#let olympiades = box(
+    baseline: 20%,
+    image("olympiades.svg", height: 1.2em)
+)

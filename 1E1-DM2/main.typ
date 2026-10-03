@@ -65,7 +65,7 @@ $ g(m+n)=0 times 0 = g(m) times g(n) $
 
 - Soit $a in NN$, posons désormais #defunc($g$, $NN$, $NN$, $n$, $a^n$). On a alors :
 
-$g(m+n) = a^(n+m) = a^n times a^m = g(n) times g(m) $
+$ g(m+n) = a^(n+m) = a^n times a^m = g(n) times g(m) $
 
 Ainsi, les fonctions #defunc($g$, $NN$, $NN$, $n$, $0$) et #defunc($g$, $NN$, $NN$, $n$, $a^n$) avec $a in NN$ sont bien les seules solutions de cette équation fonctionnelle.
 
