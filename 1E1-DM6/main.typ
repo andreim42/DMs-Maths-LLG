@@ -49,9 +49,36 @@ En exécutant le code python, on a bien `karma(157) = 75`, `karma(75) = 74` et `
 ===
 L'algorithme calcule la somme des carrés des chiffres qui compose le nombre qui lui est donné.
 
-===
+=== 
+
 ====
-Même sans calculer les images de $157, 175, 517, 715$ et $751$ nous pouvons dire que ce sont les mêmes.
+Même sans calculer les images de $157, 175, 517, 715$ et $751$ nous pouvons dire que ce sont les mêmes, car ils sont composés des trois mêmes chiffres.
+
+====
+Montrons que $forall p in NN^*$, on peut trouver au moins un antécédent à $p$ par récurrence.\
+Soit $p in NN^*$\
+_Initialisation_:\
+Pour $p=1$, on a $1^2=1$
+
+_Hérédité_:\
+Supposons que $p$ a un antécédent $a$ et montrons que $p+1$ en a un aussi.\
+$p=$ karma$(a)$\
+Donc $p=a_1^2+a_2^2+a_3^2+...+a_n^2$ avec $a=a_1a_2a_3...a_n$\
+Donc $p+1=a_1^2+a_2^2+a_3^2+...+a_n^2+1$\
+Donc $p+1=a_1^2+a_2^2+a_3^2+...+a_n^2+a'_(n+1)^2$ avec $a'_(n+1)=1$\
+Donc $p+1=$ karma$(a')$ avec $a'=a_1a_2a_3...a_n a'_(n+1)$\
+
+Donc tout $p in NN^*$ admet un antécédent.\
+
+Montrons à présent que si $p$ admet un antécédent, alors il en admet une infinité.\
+$p=$ karma$(a)$\
+Donc $p=a_1^2+a_2^2+a_3^2+...+a_n^2$ avec $a=a_1a_2a_3...a_n$\
+Donc $p=a_1^2+a_2^2+a_3^2+...+a_n^2+0^2$\
+Donc $p=a'_1^2+a'_2^2+a'_3^2+...+a'_n^2+a'_(n+1)^2$ avec $forall n, a_n=a'_n$ et $a'_(n+1)=0$\
+Donc $p=$ karma$(a')$ avec $a!=a'$\
+
+Donc $forall p in NN^*,p$ admet une infinité d'antécédents.
+
 
 == Trajectoires des nombres inférieurs à $100$.
 
@@ -75,7 +102,7 @@ On observe bien qu'il n'existe aucun nombre inférieur à $100$ qui ne soit ni m
 ===
 D'après la *1.B.1)*, on voit qu'il y a $19$ nombres heureux.
 
-Ainsi, $P("\"Obtenir un nombre heureux\"") = 19/100$.
+Ainsi, $P("\"Obtenir un nombre heureux inférieur à 100\"") = 19/100$.
 
 == Trajectoires des nombres à $n$ chiffres.
 
