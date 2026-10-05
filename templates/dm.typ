@@ -259,3 +259,16 @@
     }
   )
 ]
+
+
+#let etapes-algo(columns: auto, align-style: center, ..cells) = {
+  align(center)[
+    #table(
+      columns: columns,
+      align: align-style,
+      stroke: 0.5pt + luma(150),
+      fill: (col, row) => if row == 0 { rgb("#eef6ff") } else { none },
+      ..cells
+    )
+  ]
+}
