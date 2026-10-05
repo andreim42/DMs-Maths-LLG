@@ -1,4 +1,4 @@
-#import "../templates/dm.typ": dm, olympiades, code, affiche-csv
+#import "../templates/dm.typ": dm, olympiades, code, affiche-csv, etapes-algo
 
 #dm(
   titre: "Nombres heureux",
@@ -9,17 +9,6 @@
   numero: 6,
 )[
 
-#let etapes-algo(columns: auto, align-style: center, ..cells) = {
-  align(center)[
-    #table(
-      columns: columns,
-      align: align-style,
-      stroke: 0.5pt + luma(150),
-      fill: (col, row) => if row == 0 { rgb("#eef6ff") } else { none },
-      ..cells
-    )
-  ]
-}
 
 = #olympiades
 
@@ -47,7 +36,7 @@ On en déduit que $12345 arrow 55$.
 En exécutant le code python, on a bien `karma(157) = 75`, `karma(75) = 74` et `karma(74) = 65`. Donc on a bien $157 arrow 75$, $75 arrow 74$ et $74 arrow 65$.
 
 ===
-L'algorithme calcule la somme des carrés des chiffres qui compose le nombre qui lui est donné.
+L'algorithme calcule la somme des carrés des chiffres qui composent le nombre qui lui est donné.
 
 === 
 
@@ -79,6 +68,8 @@ Donc $p=$ karma$(a')$ avec $a!=a'$\
 
 Donc $forall p in NN^*,p$ admet une infinité d'antécédents.
 
+====
+_$157  = 2^2+5^2+8^2+8^2$_
 
 == Trajectoires des nombres inférieurs à $100$.
 
@@ -108,9 +99,39 @@ Ainsi, $P("\"Obtenir un nombre heureux inférieur à 100\"") = 19/100$.
 
 === Nombres à $3$ chiffres.
 
+==== 
+On sait que l’algorithme renvoie la somme des carrés des chiffres qui composent le nombre qu'on lui donne. Par conséquent, la valeur maximale pour un nombre à trois chiffres est celle renvoyée par le nombre à trois chiffres dont la somme des chiffres est la plus grande, soit 999 : $9^2+9^2+9^2 = 243$.\
+Or $N<=999$ donc l'image de N est inférieure ou égale à 243.\
+Donc 243 majore l'image de N.\
+\
+Par ailleurs, le nombre inférieur à 243 dont la somme des chiffres est la plus grande est 199.\
+Or, l'image de N est inférieure à 243 et $1^2+9^2+9^2 = 163$\
+Donc l'image de l'image de N est majorée par 163.
+
+====
+
+
 === Nombres à $n$ chiffres.
 
+====
+Soit n appartenant à $NN$ tel que $n>=4$. On pose $Q(n)$ l'assertion : "$n times 9^2 <= 10^(n-1)-1$".\
+Initialisation : Prenons n = 4.\
+On a $4 times 9^2 = 324 <= 10^(4-1)-1 = 999$. \
+Donc $Q(4)$ est vérifiée.\
+
+Hérédité : Soit $n in NN, n>=4$. Supposons que $Q(n)$ est vraie.\ Montrons que $Q(n+1)$ est vraie.\
+On a $0 <= n times 9^2 <= 10^(n-1)-1$ et on sait que $0 <= 9^2 <= $\
+
 === Probabilité.
+
+Voici un algorithme qui renvoie tous les nombres heureux en dessous de $10space 000$:
+
+#align(center)[
+  #code("1E1-DM6/probabilité.py")
+]
+
+On obtient ainsi $1space 442$.\
+La probabilité de choisir un nombre heureux en dessous de $10space 000$ est de $1442/10000 = 14,42%$.
 
 #v(5%)
 
