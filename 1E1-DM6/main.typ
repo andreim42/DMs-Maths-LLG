@@ -33,7 +33,7 @@ Déterminons l'image de $12 space 345$.
 La boucle #smallcaps[tant que] s'arrête car $d = 0$. L'algorithme renvoie alors $p = 55$.
 On en déduit que $12345 arrow 55$.
 
-En exécutant le code python, on a bien `karma(157) = 75`, `karma(75) = 74` et `karma(74) = 65`. Donc on a bien $157 arrow 75$, $75 arrow 74$ et $74 arrow 65$.
+En exécutant le code python, on a bien `karma(157) = 75`, `karma(75) = 74` et `karma(74) = 65`. Donc on a bien $157 -> 75$, $75 -> 74$ et $74 -> 65$.
 
 ===
 L'algorithme calcule la somme des carrés des chiffres qui composent le nombre qui lui est donné.
@@ -48,6 +48,7 @@ Montrons que $forall p in NN^*$, on peut trouver au moins un antécédent à $p$
 Soit $p in NN^*$\
 _Initialisation_:\
 Pour $p=1$, on a $1^2=1$
+Donc $1$ a un antécédent.
 
 _Hérédité_:\
 Supposons que $p$ a un antécédent $a$ et montrons que $p+1$ en a un aussi.\
@@ -63,8 +64,9 @@ Montrons à présent que si $p$ admet un antécédent, alors il en admet une inf
 $p=$ karma$(a)$\
 Donc $p=a_1^2+a_2^2+a_3^2+...+a_n^2$ avec $a=a_1a_2a_3...a_n$\
 Donc $p=a_1^2+a_2^2+a_3^2+...+a_n^2+0^2$\
-Donc $p=a'_1^2+a'_2^2+a'_3^2+...+a'_n^2+a'_(n+1)^2$ avec $forall n, a_n=a'_n$ et $a'_(n+1)=0$\
-Donc $p=$ karma$(a')$ avec $a!=a'$\
+Donc $p=a'_1^2+a'_2^2+a'_3^2+...+a'_n^2+a'_(n+1)^2$ avec 
+$forall i in [|1, n|], a_i=a'_i and a'_(n+1)=0$\
+Donc $forall p in NN, exists a, a' in NN, p=$ karma$(a')=$ karma$(a)$ et $a!=a'$\
 
 Donc $forall p in NN^*,p$ admet une infinité d'antécédents.
 
@@ -120,7 +122,9 @@ On a $4 times 9^2 = 324 <= 10^(4-1)-1 = 999$. \
 Donc $Q(4)$ est vérifiée.\
 
 Hérédité : Soit $n in NN, n>=4$. Supposons que $Q(n)$ est vraie.\ Montrons que $Q(n+1)$ est vraie.\
-On a $0 <= n times 9^2 <= 10^(n-1)-1$ et on sait que $0 <= 9^2 <= $\
+On a $0 <= n times 9^2 <= 10^(n-1)-1$ et on sait que $0 <= 9^2 <= 10^2$\
+D'où $(n+1) times 9^2 <= 10^(n-1)+10^2-1 <= 10^n-10$
+
 
 === Probabilité.
 
