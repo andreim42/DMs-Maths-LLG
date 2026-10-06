@@ -1,4 +1,4 @@
-#import "../templates/dm.typ": dm, olympiades, code, affiche-csv, etapes-algo
+#import "../templates/dm.typ": dm, olympiades, code, affiche-csv
 
 #dm(
   titre: "Nombres heureux",
@@ -9,6 +9,17 @@
   numero: 6,
 )[
 
+#let etapes-algo(columns: auto, align-style: center, ..cells) = {
+  align(center)[
+    #table(
+      columns: columns,
+      align: align-style,
+      stroke: 0.5pt + luma(150),
+      fill: (col, row) => if row == 0 { rgb("#eef6ff") } else { none },
+      ..cells
+    )
+  ]
+}
 
 = #olympiades
 
@@ -172,14 +183,29 @@ Voici un algorithme qui renvoie tous les nombres heureux en dessous de $10space 
 On obtient ainsi $1 space 442$.\
 La probabilité de choisir un nombre heureux en dessous de $10space 000$ est de $1442/10000 = 14,42%$.
 
-#v(2%)
+#page(flipped: true, margin: 0.5cm)[
+  #align(center + horizon)[
+    #figure(
+      image(
+        "trajectoires.svg", 
+        width: 100%,
+        fit: "contain",
+      ),
+      caption: [Graphe fonctionnel de l'algorithme pour 300 premiers entiers \ (on remarque bien qu'il n'existe pas de noeud de degré sortant $0$ hormis pour le puits $1$)]
+    )
+  ]
 
-#align(center)[*Merci pour la lecture de ce devoir !*]
+  #v(2%)
 
-#align(center)[_Andrei_ : on veut $+$ de DM d'algorithmique Madame svp #emoji.hands.folded #emoji.hands.folded]
+  #align(center + bottom)[*Merci pour la lecture de ce devoir !*]
 
-#align(center)[#align(bottom)[
-L'ensemble de nos devoirs maison, fichiers PDF et codes sont disponibles sur : \ #link("https://github.com/andreim42/DMs-Maths-LLG")
-]]
+  #align(center + bottom)[_Andrei_ : on veut $+$ de DM d'algorithmique Madame svp #emoji.hands.folded #emoji.hands.folded]
+
+  #align(center + bottom)[
+  L'ensemble de nos devoirs maison, fichiers PDF et codes sont disponibles sur : \ #link("https://github.com/andreim42/DMs-Maths-LLG")
+  ]
+
+  #v(3%)
+]
 
 ]
