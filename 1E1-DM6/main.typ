@@ -120,21 +120,21 @@ On obtient ainsi le tableau suivant :
 On observe bien qu'il n'existe aucun nombre inférieur à $100$ qui ne soit ni malheureux ni heureux, sauf pour le nombre $0$ qui a son propre cycle et composante connexe de taille $1$.
 
 ===
-D'après la *1.B.1)*, on voit qu'il y a $19$ nombres heureux.
+D'après la *1.B.1)*, on voit qu'il y a $19$ nombres heureux strictement inférieurs à $100$. $100$ est aussi un nombre heureux d'après la trajectoire de la *Partie B)*.
 
-Ainsi, $P("\"Obtenir un nombre heureux inférieur à 100\"") = 19/100$.
+Ainsi, $P("\"Obtenir un nombre heureux inférieur à 100\"") = 20/100 = 1/5$.
 
 == Trajectoires des nombres à $n$ chiffres.
 
 === Nombres à $3$ chiffres.
 
 ==== 
-On sait que l’algorithme renvoie la somme des carrés des chiffres qui composent le nombre qu'on lui donne. Par conséquent, la valeur maximale pour un nombre à trois chiffres est celle renvoyée par le nombre à trois chiffres dont la somme des chiffres est la plus grande #footnote[par croissance de $x |-> x^2$ et propriétés de l'addition de fonctions croissantes], soit 999 : $9^2+9^2+9^2 = 243$.
+On sait que l’algorithme renvoie la somme des carrés des chiffres qui composent le nombre qu'on lui donne. Par conséquent, la valeur maximale pour un nombre à trois chiffres est celle renvoyée par le nombre à trois chiffres dont la somme des carrés des chiffres est la plus grande, soit 999 : $9^2+9^2+9^2 = 243$.
 
 Or $N<=999$ donc l'image de N est inférieure ou égale à 243.
 Donc 243 majore l'image de N.
 
-Par ailleurs, le nombre (à $3$ chiffres) inférieur à 243 dont la somme des chiffres est la plus grande est 199.
+Par ailleurs, le nombre (à $3$ chiffres) inférieur à 243 dont la somme des carrés des chiffres est la plus grande est 199.
 
 Or, l'image de N est inférieure à 243 et $1^2+9^2+9^2 = 163$
 Donc l'image de l'image de N est majorée par 163.
@@ -143,9 +143,9 @@ Donc l'image de l'image de N est majorée par 163.
 Soit $N$ un nombre à $3$ chiffres. Soit $N'$ l'image de $N$ par l'algorithme et $N''$ l'image de l'image de $N$ par l'algorithme.
 
 On a montré précémment que $N''$ est majoré par $163$.
-Le nombre (à $3$ chiffres) inférieur à $163$ dont la somme des chiffres est la plus grande est $159$. Donc l'image de $N''$ est majorée par $107$ car $159 arrow 1^2 + 5^2 + 9^2 = 107$.
+Le nombre #footnote[On choisira pour la suite uniquement les nombres *à $3$ chiffres* maximisant l'image. Dans le cas contraire, le nombre aurait $1$ ou $2$ chiffres et nous avons déjà montré que $cal(P)(1)$ et $cal(P)(2)$ sont vraies dans la *Partie B)*] inférieur à $163$ dont la somme des carrés des chiffres est la plus grande est $159$. Donc l'image de $N''$ est majorée par $107$ car $159 arrow 1^2 + 5^2 + 9^2 = 107$.
 
-Le nombre (à $3$ chiffres) inférieur à $107$ dont la somme des chiffres est la plus grande est $107$. Donc l'image de l'image de $N''$ est majorée par $50$ car $107 arrow 1^2 + 0^2 + 7^2 = 50$.
+Le nombre inférieur à $107$ dont la somme des carrés des chiffres est la plus grande est $107$. Donc l'image de l'image de $N''$ est majorée par $50$ car $107 arrow 1^2 + 0^2 + 7^2 = 50$.
 
 On remarque ainsi que peu importe le nombre à $3$ chiffres choisis à l'origine, on arrive à un nombre à $2$ chiffres. Or, on a montré que $cal(P)(2)$ est vraie dans la *Partie B)*. Donc $cal(P)(3)$ est vraie.
 
