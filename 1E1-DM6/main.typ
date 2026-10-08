@@ -174,14 +174,14 @@ Donc $forall n in NN^*, cal(P)(n)$.
 
 === Probabilité.
 
-Voici un algorithme qui renvoie tous les nombres heureux en dessous de $10space 000$:
-[NOTE : faire une légère variation]
+Voici un algorithme qui renvoie tous les nombres heureux en dessous de $10 space 000$:
+
 #align(center)[
   #code("1E1-DM6/probabilite.py")
 ]
 
-On obtient ainsi $1 space 442$.\
-La probabilité de choisir un nombre heureux en dessous de $10space 000$ est de $1442/10000 = 14,42%$.
+On obtient ainsi $0.1442$.\
+La probabilité de choisir un nombre heureux inférieur à $10 space 000$ est de $14.42%$.
 
 #page(flipped: true, margin: 0.5cm)[
   #align(center + horizon)[
@@ -191,7 +191,7 @@ La probabilité de choisir un nombre heureux en dessous de $10space 000$ est de 
         width: 100%,
         fit: "contain",
       ),
-      caption: [Graphe fonctionnel de l'algorithme pour 300 premiers entiers \ (on remarque bien qu'il n'existe pas de noeud de degré sortant $0$ hormis pour le puits $1$)]
+      caption: [Graphe fonctionnel de l'algorithme pour les 300 premiers entiers \ (on remarque bien qu'il n'existe pas de noeud de degré sortant $0$ hormis pour le puits $1$)]
     )
   ]
 
