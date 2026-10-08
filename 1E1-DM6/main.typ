@@ -135,7 +135,6 @@ Or $N<=999$ donc l'image de N est inférieure ou égale à 243.
 Donc 243 majore l'image de N.
 
 Par ailleurs, le nombre (à $3$ chiffres) inférieur à 243 dont la somme des carrés des chiffres est la plus grande est 199.
-
 Or, l'image de N est inférieure à 243 et $1^2+9^2+9^2 = 163$
 Donc l'image de l'image de N est majorée par 163.
 
@@ -237,7 +236,7 @@ La probabilité de choisir un nombre heureux inférieur à $10 space 000$ est de
 
   #align(center + bottom)[*Merci pour la lecture de ce devoir !*]
 
-  #align(center + bottom)[_Andrei_ : on veut $+$ de DM d'algorithmique Madame svp #emoji.hands.folded #emoji.hands.folded]
+  #align(center + bottom)[_Andrei_ : on veut $+$ de DM d'algorithmique Madame svp #emoji.hands.folded#emoji.hands.folded]
 
   #align(center + bottom)[
   L'ensemble de nos devoirs maison, fichiers PDF et codes sont disponibles sur : \ #link("https://github.com/andreim42/DMs-Maths-LLG")
