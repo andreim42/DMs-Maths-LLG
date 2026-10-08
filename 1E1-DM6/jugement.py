@@ -9,8 +9,7 @@ def est_heureux(nb):
 
 def jugement_dernier():
     for nb in range(100):
-        res = est_heureux(nb)
-        if (res == 1):
+        if (est_heureux(nb)):
             print(nb)
 
 if __name__ == "__main__":
