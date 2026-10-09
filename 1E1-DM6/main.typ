@@ -1,4 +1,4 @@
-#import "../templates/dm.typ": dm, olympiades, code, affiche-csv, etapes-algo
+#import "../templates/dm.typ": dm, olympiades, code, affiche-csv
 
 #dm(
   titre: "Nombres heureux",
@@ -8,6 +8,18 @@
   classe: $1^"ère"1$,
   numero: 6,
 )[
+
+#let etapes-algo(columns: auto, align-style: center, ..cells) = {
+  align(center)[
+    #table(
+      columns: columns,
+      align: align-style,
+      stroke: 0.5pt + luma(150),
+      fill: (col, row) => if row == 0 { rgb("#eef6ff") } else { none },
+      ..cells
+    )
+  ]
+}
 
 = #olympiades
 
@@ -129,7 +141,7 @@ Donc l'image de l'image de N est majorée par 163.
 ====
 Soit $N$ un nombre à $3$ chiffres. Soit $N'$ l'image de $N$ par l'algorithme et $N''$ l'image de l'image de $N$ par l'algorithme.
 
-On a montré précémment que $N''$ est majoré par $163$.
+On a montré précédemment que $N''$ est majoré par $163$.
 Le nombre #footnote[On choisira pour la suite uniquement les nombres *à $3$ chiffres* maximisant l'image. Dans le cas contraire, le nombre aurait $1$ ou $2$ chiffres et nous avons déjà montré que $cal(P)(1)$ et $cal(P)(2)$ sont vraies dans la *Partie B)*] inférieur à $163$ dont la somme des carrés des chiffres est la plus grande est $159$. Donc l'image de $N''$ est majorée par $107$ car $159 arrow 1^2 + 5^2 + 9^2 = 107$.
 
 Le nombre inférieur à $107$ dont la somme des carrés des chiffres est la plus grande est $107$. Donc l'image de l'image de $N''$ est majorée par $50$ car $107 arrow 1^2 + 0^2 + 7^2 = 50$.
@@ -216,7 +228,7 @@ La probabilité de choisir un nombre heureux inférieur à $10 space 000$ est de
         width: 100%,
         fit: "contain",
       ),
-      caption: [Graphe fonctionnel de l'algorithme pour les 300 premiers entiers \ (on remarque bien qu'il n'existe pas de noeud de degré sortant vers un noeud différent nul hormis pour le puits $1$)]
+      caption: [Graphe fonctionnel de l'algorithme pour les 300 premiers entiers \ (on remarque bien qu'il n'existe pas de nœud de degré sortant vers un nœud différent nul hormis pour le puits $1$)]
     )
   ]
 
