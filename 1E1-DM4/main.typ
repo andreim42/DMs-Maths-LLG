@@ -6,7 +6,7 @@
   numbers: true,
   auteurs: "BONNET Zéphyr, FERRAOUN Rayane, MELLIER Raphaël, MITROI Andrei",
   classe: $1^"ère"1$,
-  numero: 6,
+  numero: 4,
 )[
 
 #let etapes-algo(columns: auto, align-style: center, ..cells) = {
@@ -106,7 +106,7 @@ Voici un nombre à $4$ chiffres qui est un antécédent de $157$ : $2588 arrow 2
 Voici un algorithme (pas optimisé) donnant les nombres heureux strictement inférieurs à $100$ :
 
 #align(center)[
-  #code("1E1-DM6/jugement.py")
+  #code("1E1-DM4/jugement.py")
 ]
 
 #v(2em)
@@ -114,7 +114,7 @@ Voici un algorithme (pas optimisé) donnant les nombres heureux strictement inf�
 On obtient ainsi le tableau suivant :
 
 #align(center)[
-  #affiche-csv("1E1-DM6/tableau_heureux.csv")
+  #affiche-csv("1E1-DM4/tableau_heureux.csv")
 ]
 
 On observe bien qu'il n'existe aucun nombre inférieur à $100$ qui ne soit ni malheureux ni heureux, sauf pour le nombre $0$ qui a son propre cycle et composante connexe de taille $1$.
@@ -214,7 +214,7 @@ Donc $forall n in NN^*, cal(P)(n)$.
 Voici un algorithme qui renvoie tous les nombres heureux en dessous de $10 space 000$ :
 
 #align(center)[
-  #code("1E1-DM6/probabilite.py")
+  #code("1E1-DM4/probabilite.py")
 ]
 
 On obtient ainsi $0.1442$.\

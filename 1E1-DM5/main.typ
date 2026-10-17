@@ -7,7 +7,7 @@
   numbers: true,
   auteurs: "BONNET Zéphyr, FERRAOUN Rayane, MELLIER Raphaël, MITROI Andrei",
   classe: $1^"ère"1$,
-  numero: 7,
+  numero: 5,
 )[
 = #olympiades
 ==
