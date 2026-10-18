@@ -83,8 +83,10 @@
             "Partie " + numbering("A", pos.last())
         } else if pos.len() == 3 {
             numbering("1)", pos.last())
-        } else {
+        } else if pos.len() == 4 {
             numbering("a)", pos.last())
+        } else {
+            numbering("(i)", pos.last())
         }
     })
 
@@ -159,6 +161,12 @@
     show heading.where(level: 4): it => {
         box(inset: (left: 1.5em))[
             #text(11pt, weight: "bold")[#counter(heading).display() #it.body]
+        ]
+    }
+
+    show heading.where(level: 5): it => {
+        box(inset: (left: 2.5em))[
+            #text(11pt, weight: "regular")[#counter(heading).display() #it.body]
         ]
     }
 
