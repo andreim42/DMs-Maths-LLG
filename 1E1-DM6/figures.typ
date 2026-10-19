@@ -1,4 +1,4 @@
-#import "@preview/cetz:0.3.2"
+#import "@preview/cetz:0.3.3"
 #import cetz.draw: *
 
 #let vector(from, to, color: black, thickness: 1.4pt, label: none, anchor: "north") = {
