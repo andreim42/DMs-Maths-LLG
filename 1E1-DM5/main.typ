@@ -114,7 +114,7 @@ delta(x, x xor y) &= mat(a,a+c;b,b+d)\
 $
 Donc $delta(x,x xor y)=delta(x xor y,y)=delta(x,y)$
 
-Supposons que $delta(x,y)=1$.
+Supposons que $delta(x,y)=-1$.
 On pose pgcd$(a+c,b+d)=p$.
 On pose $k=(a+c)/p$ et $k'=(b+d)/p$.
 
@@ -159,13 +159,13 @@ Alors donc $exists k in ZZ^*, k|n "et" k|n-m$
 Donc $exists p, q in QQ^*, n=k q "et" n-m=k p$
 
 $
-k q-m&=k p\
-m&=(k q)/(k p)\
-m/n=((k q)/(k p))/(k q)&=(k q)/(k p k q) "donc la fraction" m/n "n'est pas irréductible"
+k q - m &= k p \
+m &= k q - k p = k(q - p) \
+m/n &= (k(q - p))/(k q) = (q - p)/q
 $
 
-Contradiction !
-Donc $(n-m)/n in cal(F_n)$
+Donc la fraction $m/n$ n'est pas irréductible. Contradiction !
+Donc $(n-m)/n in cal(F_n)$.
 
 Montrons que $1/2$ est le centre de symétrie de $cal(F_n)$ 
 
@@ -328,13 +328,12 @@ Donc les cercles $scr(C)$ et $scr(C')$ sont tangents.
 
 == Approximation.
 ===
-
 ==== On sait que $alpha = 1/sqrt(2)$    
 #table(
   columns: 6,
   [*Etape*],[*2*],[*3*],[*4*],[*5*],[*6*],
-  [*Valeur par défaut*], [*$2/3$*], [*$2/3$*], [*$2/3$*], [*$7/10$*], [*$12/17$*],
-  [*Valeur par eccès*], [$1/2$], [$3/4$],[$5/7$], [$5/7$],[$5/7$]
+  [*Valeur par défaut*], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
+  [*Valeur par excès*], [$1/1$], [$3/4$],[$5/7$], [$5/7$],[$5/7$]
 ) 
 On s'arrête à l'étape 6, étant donné que la prochaine fraction serait : 
 $ 12/17  xor 5/7 = 17/24$.
@@ -343,25 +342,23 @@ $24>20$, on ne peut donc pas le conserver.
 
 L'encadrement, obtenu est donc $12/17 < 1/sqrt(2) < 5/7 $ qui est le meilleur encadrement possible des dénominateurs inférieurs ou égaux à $20$ 
 
-
-
 ====
-On poursuit donc avec exactement la même méthode:
+On poursuit donc avec exactement la même méthode :
 A partir de l'étape précédente, les bornes sont $12/17 $ et $5/7$
 
 #table(
   columns: 5,
   [*étape*],[*7*],[*8*],[*9*],[*10*],
   
-  [*Valeur par défaut*], [*$12/17$*], 
-  [$29/41$], [$46/65$], [$46/65$],
+  [*Valeur par défaut*], [$12/17$], 
+  [$12/17$], [$41/58$], [$70/99$],
   
-  [*Valeur par excès*], [$17/24$], [$17/24$],[$17/24$], [$75/106$],
+  [*Valeur par excès*], [$17/24$], [$29/41$],[$29/41$], [$29/41$],
 )
 
 A l'étape 10 le dénominateur 106, dépasse 100 : on ne peut donc pas retenir cette fraction.
 
-L'encadrement, obtenu est donc $46/65 < 1/sqrt(2) < 17/24 $ qui est le meilleur encadrement possible des dénominateurs inférieurs oui égaux à $100$ 
+L'encadrement obtenu est donc $70/99 < 1/sqrt(2) < 29/41$ qui est le meilleur encadrement possible des dénominateurs inférieurs oui égaux à $100$ 
 
 ===
 Montrez que : $forall$  $alpha $ $in$  $]0;1[$ et tout $n in NN^*, exists a/b in cal(F)_n$ ,telle que : 
