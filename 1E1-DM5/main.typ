@@ -328,15 +328,18 @@ Donc les cercles $scr(C)$ et $scr(C')$ sont tangents.
 
 == Approximation.
 ===
-==== On sait que $alpha = 1/sqrt(2)$    
-#table(
-  columns: 6,
-  inset: 0.8em,
+==== On sait que $alpha = 1/sqrt(2)$
 
-  [*étapes*],[*2*],[*3*],[*4*],[*5*],[*6*],
-  [*Valeur par défaut*], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
-  [*Valeur par excès*], [$1/1$], [$3/4$],[$5/7$], [$5/7$],[$5/7$]
-) 
+#align(center)[
+  #table(
+    columns: 6,
+    inset: 0.8em,
+
+    [*étapes*],[*2*],[*3*],[*4*],[*5*],[*6*],
+    [*Valeur par défaut*], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
+    [*Valeur par excès*], [$1/1$], [$3/4$],[$5/7$], [$5/7$],[$5/7$]
+  )
+]
 On s'arrête à l'étape 6, étant donné que la prochaine fraction serait : 
 $ 12/17  xor 5/7 = 17/24$.
 
@@ -348,15 +351,17 @@ L'encadrement, obtenu est donc $12/17 < 1/sqrt(2) < 5/7 $ qui est le meilleur en
 On poursuit donc avec exactement la même méthode :
 A partir de l'étape précédente, les bornes sont $12/17 $ et $5/7$
 
-#table(
-  columns: 5,
-  inset: 0.8em,
+#align(center)[
+  #table(
+    columns: 5,
+    inset: 0.8em,
 
-  [*étapes*],[*7*],[*8*],[*9*],[*10*],
-  [*Valeur par défaut*], [$12/17$], 
-  [$12/17$], [$41/58$], [$70/99$],
-  [*Valeur par excès*], [$17/24$], [$29/41$],[$29/41$], [$29/41$],
-)
+    [*étapes*],[*7*],[*8*],[*9*],[*10*],
+    [*Valeur par défaut*], [$12/17$], 
+    [$12/17$], [$41/58$], [$70/99$],
+    [*Valeur par excès*], [$17/24$], [$29/41$],[$29/41$], [$29/41$],
+  )
+]
 
 A l'étape 10 le dénominateur 106, dépasse 100 : on ne peut donc pas retenir cette fraction.
 
