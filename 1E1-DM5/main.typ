@@ -331,7 +331,9 @@ Donc les cercles $scr(C)$ et $scr(C')$ sont tangents.
 ==== On sait que $alpha = 1/sqrt(2)$    
 #table(
   columns: 6,
-  [*Etape*],[*2*],[*3*],[*4*],[*5*],[*6*],
+  inset: 0.8em,
+
+  [*étapes*],[*2*],[*3*],[*4*],[*5*],[*6*],
   [*Valeur par défaut*], [$2/3$], [$2/3$], [$2/3$], [$7/10$], [$12/17$],
   [*Valeur par excès*], [$1/1$], [$3/4$],[$5/7$], [$5/7$],[$5/7$]
 ) 
@@ -348,11 +350,11 @@ A partir de l'étape précédente, les bornes sont $12/17 $ et $5/7$
 
 #table(
   columns: 5,
-  [*étape*],[*7*],[*8*],[*9*],[*10*],
-  
+  inset: 0.8em,
+
+  [*étapes*],[*7*],[*8*],[*9*],[*10*],
   [*Valeur par défaut*], [$12/17$], 
   [$12/17$], [$41/58$], [$70/99$],
-  
   [*Valeur par excès*], [$17/24$], [$29/41$],[$29/41$], [$29/41$],
 )
 
