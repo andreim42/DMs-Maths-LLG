@@ -180,45 +180,121 @@ Donc $m/n$ et  $(n-m)/n$ sont à une même distance de $1/2$ et l'un des deux te
 Donc $1/2$ est le centre de symétrie de $cal(F_n)$
 
 ===
-_Lemme_ : Deux fractions consécutives de $cal(F)_n$ ont un écart d'au plus $1/n$.
-
-_Démonstration_ :
-
 Soient $x = a/b, y = c/d$ deux fractions consécutives de $cal(F)_(n+1)$ avec $a in NN, b in NN^*, c in NN, d in NN^*$.
 
 Montrons que $x in cal(F)_n$ ou $y in cal(F)_n$. Raisonnons par l'absurde. Supposons que $x in cal(F)_(n+1)$ et $y in cal(F)_(n+1)$.
 
 Supposons spdg que $x < y$, soit $a/b < c/d$.
 
-Alors $b = n + 1$ et $d = n + 1$, donc $a < c$, donc $a + 1 <= c$ car $a in NN$ et $c in NN$.
-Donc $a - c <= -1$
+Alors $b = n + 1$ et $d = n + 1$. Donc $a/(n + 1)$ et $c/(n + 1)$ sont consécutives. Donc $c = a + 1$ car on aurait
 
-Donc $(a - c)/(n + 1) <= -1/(n + 1)$. Donc $a/(n + 1) - c/(n + 1) <= -1/(n + 1)$. Or, $x < y$ donc $a/(n + 1) < c/(n + 1)$ donc $abs(a/(n + 1) - c/(n + 1)) = -(a/(n + 1) - c/(n + 1))$
+$x = a/(n + 1) < (a + 1)/(n + 1) < c/(n + 1) = y$ alors que $x$ et $y$ sont consécutives.
+Donc on a $a/(n + 1)$ et $(a + 1)/(n + 1)$ consécutives.
 
-Donc $abs(a/(n + 1) - c/(n + 1)) >= 1/(n + 1)$.
+_Montrons qu'on peut choisir un $z = k/n$ tel que $x < z < y$._ : Soit $z = k/n$ avec $k in NN$.
+
+$
+x < z < y &<==> a/(n + 1) < k/n < (a + 1)/(n + 1) \
+&<==> (n a)/n(n + 1) < k(n + 1)/n(n + 1) < n(a + 1)/n(n + 1) \
+&<==> n a < k(n + 1) < n(a + 1) \
+&<==> n a < k n + k < n a + n \
+&<==> n a < k(n + 1) < n(a + 1) \
+&<==> (n a)/(n + 1) < k < n(a + 1)/(n + 1) \
+&<==> (a(n + 1) - a)/(n + 1) < k < (n a + n)/(n + 1) = (a(n + 1) - a + n)/(n + 1) \
+&<==> a - a/(n + 1) < k < a - (a - n)/(n + 1)
+$
+
+Le seul entier $k$ valide est $k = a$ car $0 < a < n$ et on a bien $z = a/n in cal(F)_n$. Donc $a/(n + 1) < a/n < (a + 1)/(n + 1)$. Or $a/(n + 1)$ et $(a + 1)/(n + 1)$ sont consécutifs. Contradiction !
+
+Donc on a $x in cal(F)_(n + 1)$ ou $y in cal(F)_(n + 1)$.
 
 ===
-====
+Pour $n in NN^*$, on note $cal(P)(n)$ l'assertion : "si $x < y$ sont deux fractions consécutives de $cal(F)_n$
+alors $delta (x; y) = -1$ et $x xor y$ est la première#footnote[On considère ici que le terme "première fraction qui va apparaître" signifie qu'elle va être la première à être générée entre les deux fractions lors de la construction à partir des ensembles précédents et non pas qu'elle sera première dans l'ordre croissant des fractions.] fraction qui va apparaître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 1$".
 
 ====
+_Initialisation_ : Pour $n = 1$, supposons que $x < y$ soient deux fractions de $cal(F)_1 = {0/1, 1/1}$.
+
+Donc $x = 0/1$ et $y = 1/1$. D'où $delta (x; y) = 0 - 1 = -1$ et $x xor y = 1/2$.
+
+Or, $cal(F)_(2) = {0/1, 1/2, 1/1}$ donc $1/2 = x xor y in cal(F)_2$ donc $1/2$ apparaît dès $cal(F)_2$.
+
+Donc $cal(P)(1)$ est vraie.
+
+====
+_Hérédité_ : Soit $n in NN^*$. On suppose que $cal(P)(n)$ est vraie.
+
+Soient $x = a/b$ et $y = c/d$ deux fractions consécutives de $cal(F)_(n + 1)$ telles que $x < y$.
+D'après la question *C.3)* l'une, au moins, de ces fractions appartient à $cal(F)_n$.
+Raisonnons par disjonction de cas :
 
 =====
+$1^("er")$ cas : $x, y in cal(F)_n$. On sait que $x$ et $y$ sont deux fractions consécutives de $cal(F)_(n+1)$. Or, $x, y in cal(F)_n$ et $cal(F)_n in cal(F)_(n+1)$ donc elles sont aussi consécutives dans $cal(F)_n$.
+
+On a alors $delta (x; y) = -1$ et $x xor y$ qui va être la première fraction à appraître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 1$ par hypothèse de récurrence.
+
+Or, on sait que $x$ et $y$ sont consécutives dans $cal(F)_(n+1)$, donc on a même que $x xor y$ va être la première fraction à apparaître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 2 = (n + 1) + 1$.
+Donc $cal(P)(n + 1)$ est vraie.
 
 =====
+$2^("ème")$ cas : $x in cal(F)_n$ et $y in cal(F)_(n + 1) without cal(F)_n$.
+On note $z$ la fraction successive de $x$ dans $cal(F)_n$.
+
+_Montrons que $y = x xor z$ et que $delta (x; y) = -1$_ : Par hypothèse de récurrence, on a $delta (x; z) = -1$ et $x xor z$ est la première fraction à apparaître entre $x$ et $z$ dans un ensemble $cal(F)_m$ avec $m >= n + 1$. Or, $y$ est la première fraction à apparaître entre $x$ et $z$ dans $cal(F)_(n + 1)$ car $x$ et $y$ sont consécutifs. Donc $x xor z = y$.
+
+De plus, $delta (x; y) = delta (x; x xor z) = delta (x; z) = -1$ d'après la *B.4)*.
+
+Soit $t = r/s$ la première fraction irréductible qui va apparaître entre $x$ et $y$ dans un certain ensemble $cal(F)_m$ avec $m >= n + 2$.
+
+_Montrons que $delta (t; x)$ et $delta (y; t)$ sont des entiers supérieurs ou égaux à 1_ :
+On a $x < t < y$. Donc $delta (x; y) <= -1$ et $delta (t; y) <= -1$ d'après la *B.3)*. Or, $delta (t; x) = -delta (x; y)$ et $delta (y; t) = -delta (t; y)$ d'après la *B.2)*.
+
+Ainsi, $delta (t; x) >= 1$ et $delta (y; t) >= 1$. De plus, $delta (t; x) = r b - s a$ et $delta (y; t) = c s - d r$. Or, $a, c, r in NN$ et $b, d, s in NN^*$.
+
+Donc $delta (t; x)$ et $delta (y; t)$ sont des entiers supérieurs ou égaux à $1$.
+
+_Montrons que $r = a delta (y; t) + c delta (t; x)$ et $s = b delta (y; t) + d delta (t; x)$_ :
+
+On a $a delta (y; t) + c delta (t; x) = a(c s - d r) + c(r b - s a) = dot(a c s) - a d r + c r b - dot(c s a) = r (b c - a d) = - r delta (x; y) = r$ car on a montré que $delta (x; y) = -1$.
+
+Et, $b delta (y; t) + d delta (t; x) = b(c s - d r) + d(r b - s a) = b c s - dot(b d r) + dot(d r b) - d s a = s(b c - a d) = -s delta (x; y) = s$ car on a montré que $delta (x; y) = -1$.
+
+Raisonnons par l'absurde pour montrer que $s = b + d$.
+Supposons que $delta (y; t) != 1$ et $delta (t; x) != 1$. Alors on aura que $b + d < s$. De plus, $delta (x; y) = -1$ donc $x xor y$ est irréductible. Donc $x xor y = (a + c)/(b + d)$ apparaît avant $t$ dans la construction des ensembles. Or, $t$ est la première fraction irréductible à apparaître entre $x$ et $y$. Contradiction !
+
+Donc $delta (y; t) = delta (t; x) = 1$. Donc $t = r/s = (a + c)/(b + d) = x xor y$.
+
+Ainsi, $delta (x; y) = -1$ et $x xor y$ est bien la première fraction à apparaître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 2$. Donc $cal(P)(n + 1)$ est vraie.
 
 =====
+$3^("ème")$ cas : $x in cal(F)_(n + 1) without cal(F)_n$ et $y in cal(F)_n$. D'après la *C.2)*, $cal(F)_(n + 1)$ est symétrique donc
+
+$x' = (b - a)/b in cal(F)_(n + 1) without cal(F)_n$ et $y' = (d - c)/d in cal(F)_n$.
+
+De plus, $x < y$ sont deux fractions consécutives de $cal(F)_(n + 1)$ donc $y' < x'$ et $x'$ et $y'$ sont deux fractions consécutives de $cal(F)_(n + 1)$. Ainsi, on se ramène au cas précédent et on raisonne de la même manière.
+
+Donc $cal(P)(n + 1)$ est vraie.
+
+$4^("ème")$ cas : $x, y in cal(F)_(n + 1) without cal(F)_n$. Ce cas est impossible, en effet d'après le *C.3)*, $x$ ou $y$ appartient à $cal(F)_n$.
+
+_Conclusion_ : Dans tous les cas, $cal(P)(n + 1)$ est vraie.
+Ainsi, pour tout $n in NN^*, cal(P)(n)$ est vraie par principe de récurrence.
 
 == Cercles de Ford.
 Faut montrer qu'il existe un point appartenant aux deux cercles correspondant à $x$ et $y$
 
 - Montrons que le cercle de Ford à un nombre de $cal(F_n)$ est tangent à l'axe des abscisses.
-Soit $x$ une fraction de $cal(F_n)$ (avec $x=a/b$).\
-Le cercle de Ford associé est le cercle $scr(C)$ de centre $O(a/b,1/(2b^2))$ et de rayon $1/(2b^2)$.\ 
-On considère le point $M$ le projeté orthogonal de $O$ sur l'axe des abscisses. \
-Donc $M$ a pour coordonnées $(a/b, 0)$.\
+Soit $x$ une fraction de $cal(F_n)$ (avec $x=a/b$).
+
+Le cercle de Ford associé est le cercle $scr(C)$ de centre $O(a/b,1/(2b^2))$ et de rayon $1/(2b^2)$.
+
+On considère le point $M$ le projeté orthogonal de $O$ sur l'axe des abscisses.
+
+Donc $M$ a pour coordonnées $(a/b, 0)$.
 
 $M O=sqrt((x_M-x_O)^2+(y_M-y_O)^2)=sqrt(0^2+(-1/(2b^2))^2)=1/(2b^2)$\
-Donc $M$ appartient au cercle $scr(C)$ de centre O et de rayon $1/(2b^2)$ et $O M$ est perpendiculaire à l'axe des abscisses.\
+Donc $M$ appartient au cercle $scr(C)$ de centre O et de rayon $1/(2b^2)$ et $O M$ est perpendiculaire à l'axe des abscisses.
+
 Donc $scr(C)$ est tangent à l'axe des abscisses.
 
 - Montrons que les deux cercles associés à deux fractions consécutives de $cal(F)_n$ sont tangents entre eux.
@@ -233,14 +309,16 @@ et $R_scr(C) + R_scr(C') = 1/(2b^2) + 1/(2d^2) = (d^2+b^2)/(2b^2d^2)$
 
 D'où :
 
-$O O'^2 &=(x_O-x_O')^2+(y_O-y_O')^2\
+$
+O O'^2 &=(x_O-x_O')^2+(y_O-y_O')^2\
 &= (a/b-c/d)^2+(1/(2b^2) - 1/(2d^2))^2\
 &= ((a d-b c)/(b d))^2 + ((2d^2-2b^2)/(4b^2d^2))^2\
 &= (-1/(b d))^2 + ((d^2-b^2)/(2b^2d^2))^2 ("car" delta(x,y)= -1)\
 &= 1/(b^2d^2) + ((d^4 - 2d^2b^2 + b^4)/(4b^4d^4))\
 &= (d^4 + 2b^2d^2 + b^4)/(4b^4d^4)\
 &= ((d^2+b^2)/(2b^2d^2))^2\
-&= (R_scr(C) + R_scr(C'))^2$
+&= (R_scr(C) + R_scr(C'))^2
+$
 
 Or $O O'$ et $R_scr(C) + R_scr(C')$ sont des longueurs,
 
@@ -251,10 +329,100 @@ Donc les cercles $scr(C)$ et $scr(C')$ sont tangents.
 == Approximation.
 ===
 
-====
+==== On sait que $alpha = 1/sqrt(2)$    
+#table(
+  columns: 6,
+  [*Etape*],[*2*],[*3*],[*4*],[*5*],[*6*],
+  [*Valeur par défaut*], [*$2/3$*], [*$2/3$*], [*$2/3$*], [*$7/10$*], [*$12/17$*],
+  [*Valeur par eccès*], [$1/2$], [$3/4$],[$5/7$], [$5/7$],[$5/7$]
+) 
+On s'arrête à l'étape 6, étant donné que la prochaine fraction serait : 
+$ 12/17  xor 5/7 = 17/24$.
+
+$24>20$, on ne peut donc pas le conserver.
+
+L'encadrement, obtenu est donc $12/17 < 1/sqrt(2) < 5/7 $ qui est le meilleur encadrement possible des dénominateurs inférieurs ou égaux à $20$ 
+
+
 
 ====
+On poursuit donc avec exactement la même méthode:
+A partir de l'étape précédente, les bornes sont $12/17 $ et $5/7$
+
+#table(
+  columns: 5,
+  [*étape*],[*7*],[*8*],[*9*],[*10*],
+  
+  [*Valeur par défaut*], [*$12/17$*], 
+  [$29/41$], [$46/65$], [$46/65$],
+  
+  [*Valeur par excès*], [$17/24$], [$17/24$],[$17/24$], [$75/106$],
+)
+
+A l'étape 10 le dénominateur 106, dépasse 100 : on ne peut donc pas retenir cette fraction.
+
+L'encadrement, obtenu est donc $46/65 < 1/sqrt(2) < 17/24 $ qui est le meilleur encadrement possible des dénominateurs inférieurs oui égaux à $100$ 
 
 ===
-  
+Montrez que : $forall$  $alpha $ $in$  $]0;1[$ et tout $n in NN^*, exists a/b in cal(F)_n$ ,telle que : 
+$|alpha - a/b|$ $< 1/b(n+1) $
+
+avec $a/b <= alpha <= c/d $
+
+Considérons les deux fractions consécutives de $cal(F)_n$, la partie B nous permet d'utiliser la propriété:
+
+$"bc" - "ad" = 1 $
+
+Ainsi : 
+$c/d -a/b = ("bc"-"ad")/"bd" = 1/"bd"$
+
+On obtient donc : $c/d-a/b=1/"bd"$ 
+
+De plus, puisque les fractions sont consécutives, dans $cal(F)_n$, on a: 
+$b+d>=n+1$
+
+Posons : $u= alpha-a/b $  et $v=c/d-alpha$, deux nombres positifs ou nuls 
+
+En les additionnant : 
+$u+v = alpha - a/b+c/d - alpha $
+
+Donc 
+$u+v = c/d-a/b$
+
+Or d'après l'étape précédente
+$u+v = 1/"bd"$
+
+On aurait alors : $u>1/b(n+1)$
+et 
+$v>1/d(n+1)$
+
+En sommant ces inégalités, on obtient donc : 
+$u+v >1/b(n+1)+ 1/d(n+1) $
+
+On met au même dénominateur : 
+$u+v > (b+d)/(b d(n+1))$
+
+Or $b+d>= n+1$, donc :
+$(b+d)/"bd"(n+1)>=1/"bd"$
+
+Par conséquent : 
+$u+v>1/"bd"$
+Mais nous avons démontré a l'étape deux que : 
+$u+v=1/"bd"$
+
+Absurde !
+
+Ainsi au moins l'une des deux fractions verifie l'inégalité recherchée. 
+
+*Conclusion :*
+Il existe une fraction $a/b in cal(F)_n$ telle que : $|alpha - a/b| < 1/b(n+1)$
+
+#v(5%)
+
+#align(center)[*Merci pour la lecture de ce devoir !*]
+
+#align(center + bottom)[
+L'ensemble de nos devoirs maison, fichiers PDF et codes sont disponibles sur : \ #link("https://github.com/andreim42/DMs-Maths-LLG")
+]
+
 ]
