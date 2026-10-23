@@ -43,9 +43,9 @@ Donc, dans tous les cas, il existe une droite tropicale $cal(T)$ qui passe par d
 ====
 Soient $A(0,0)$, $B(0,-2)$, deux points.
 
-Alors $A$ et $B$ sont sur une même droite de direction $-arrow(dotless.j)$. et les droites tropicales $cal(T)(0,1)$ et $cal(T')(0,0)$ passent toutes la deux par $A$ et $B$ et $cal(T)!=cal(T')$.
+Alors $A$ et $B$ sont sur une même droite de direction $-arrow(dotless.j)$ (la droite de formule $x=0$) et les droites tropicales $cal(T)(0,1)$ et $cal(T')(0,0)$ passent toutes les deux par $A$ et $B$ et $cal(T)!=cal(T')$.
 
-Donc la propriété $cal(B)$ n'est pas vérifié lorsque les points sont dépendants.
+Donc la propriété $cal(B)$ n'est pas vérifiée lorsque les points sont dépendants.
 
 ====
 Soient $A$ et $B$ deux points du plan indépendants.
@@ -170,11 +170,16 @@ $-5times.o 2=-5+2=-3$
 
 ===
 Soient $a, b, c in RR$\
-- $(a xor b)xor c=max(max(a,b),c)=max(a,b,c)=max(a,max(b,c))=a xor(b xor c)$\
-Donc $xor$ est associatif
-- $a xor b=max(a,b)=max(b,a)=b xor a$\
-Donc $xor$ est commutatif
-- $a times.o (b xor c)=a+max(b,c)=max(a+b,a+c)=a times.o b xor a times.o c$\
+- $(a xor b)xor c=max(max(a,b),c)=max(a,b,c)=max(a,max(b,c))=a xor(b xor c)$
+
+Donc $xor$ est associatif.
+
+- $a xor b=max(a,b)=max(b,a)=b xor a$
+
+Donc $xor$ est commutatif.
+
+- $a times.o (b xor c)=a+max(b,c)=max(a+b,a+c)=a times.o b xor a times.o c$
+
 Donc $times.o$ est distributif par rapport à $xor$.
 ===
 Soit $x, y in RR$. Soit $cal(T)$ le lieu des coins de $P_T$, soit l'ensemble des points du plan pour lesquels le maximum de $P_T$ est atteint par au moins deux membres.
@@ -182,21 +187,21 @@ Soit $x, y in RR$. Soit $cal(T)$ le lieu des coins de $P_T$, soit l'ensemble des
 $
 #text[«maximum atteint au moins deux fois»] &<==> 
 cases(
-  &space space space space a + x = b + y >= c,
-  &"ou" a + x = c >= b + y,
-  &"ou" b + y = c >= a + x
+  &a + x = b + y >= c,
+  "ou" &a + x = c >= b + y,
+  "ou" &b + y = c >= a + x
 ) \
 &<==>
 cases(
-  &space space space space (y = x + a - b "et" a + x >= c),
-  &"ou" (x = c - a "et" c >= b + y),
-  &"ou" (y = c - b "et" c >= a + x)
+  &(y = x + a - b "et" a + x >= c),
+  "ou" &(x = c - a "et" c >= b + y),
+  "ou" &(y = c - b "et" c >= a + x)
 ) \
 &<==>
 cases(
-  &space space space space (y = x + a - b "et" x >= c - a),
-  &"ou" (x = c - a "et" y <= c - b),
-  &"ou" (y = c - b "et" x <= c - a)
+  &(y = x + a - b "et" x >= c - a),
+  "ou" &(x = c - a "et" y <= c - b),
+  "ou" &(y = c - b "et" x <= c - a)
 )
 $
 
@@ -236,30 +241,30 @@ Soit $x, y in RR$. On a $Q_T(x, y) = 1 xor (-1) times.o x xor 0 times.o y xor (-
 $
 #text[«maximum atteint au moins deux fois»] &<==> 
 cases(
-  &space space space space y = 1 >= max(x - 1, x^2 - 5),
-  &"ou" y = x - 1 >= max(1, x^2 - 5),
-  &"ou" y = x^2 - 5 >= max(1, x - 1),
-  &"ou" 1 = x - 1 >= max(y, x^2 - 5),
-  &"ou" 1 = x^2 - 5 >= max(y, x - 1),
-  &"ou" x - 1 = x^2 - 5 >= max(y, 1)
+  &y = 1 >= max(x - 1, x^2 - 5),
+  "ou" &y = x - 1 >= max(1, x^2 - 5),
+  "ou" &y = x^2 - 5 >= max(1, x - 1),
+  "ou" &1 = x - 1 >= max(y, x^2 - 5),
+  "ou" &1 = x^2 - 5 >= max(y, x - 1),
+  "ou" &x - 1 = x^2 - 5 >= max(y, 1)
 ) \
 &<==>
 cases(
-  &space space space space (y = 1 "et" x <= 2 "et" x^2 <= 6),
-  &"ou" (y = x - 1 "et" x >= 2 "et" x^2 - x - 4 <= 0),
-  &"ou" (y = x^2 - 5 "et" x^2 >= 6 "et" x^2 - x - 4 >= 0),
-  &"ou" (x = 2 "et" y <= 1 "et" -1 <= 1),
-  &"ou" (x = plus.minus sqrt(6) "et" y <= 1 "et" x - 1 <= 1),
-  &"ou" (x = (1 plus.minus sqrt(17))/2 "et" y <= x - 1 "et" x - 1 >= 1)
+  & (y = 1 "et" x <= 2 "et" x^2 <= 6),
+  "ou" &(y = x - 1 "et" x >= 2 "et" x^2 - x - 4 <= 0),
+  "ou" &(y = x^2 - 5 "et" x^2 >= 6 "et" x^2 - x - 4 >= 0),
+  "ou" &(x = 2 "et" y <= 1 "et" -1 <= 1),
+  "ou" &(x = plus.minus sqrt(6) "et" y <= 1 "et" x - 1 <= 1),
+  "ou" &(x = (1 plus.minus sqrt(17))/2 "et" y <= x - 1 "et" x - 1 >= 1)
 ) \
 &<==>
 cases(
-  &space space space space (y = 1 "et" -sqrt(6) <= x <= 2) &"(segment parallèle à" y = k")",
-  &"ou" (y = x - 1 "et" 2 <= x <= (1 + sqrt(17))/2) &"(segment parallèle à" y = x")",
-  &"ou" (y = x^2 - 5 "et" (x <= -sqrt(6) "ou" x >= (1 + sqrt(17))/2)) &"(parabole)",
-  &"ou" (x = 2 "et" y <= 1) &"(droite parallèle à x = k)",
-  &"ou" (x = -sqrt(6) "et" y <= 1) &"(droite parallèle à x = k)",
-  &"ou" (x = (1 + sqrt(17))/2 "et" y <= (sqrt(17) - 1)/2) &"(droite parallèle à x = k)"
+  & (y = 1 "et" -sqrt(6) <= x <= 2) &"(segment parallèle à" y = k")",
+  "ou"& (y = x - 1 "et" 2 <= x <= (1 + sqrt(17))/2) &"(segment parallèle à" y = x")",
+  "ou"& (y = x^2 - 5 "et" (x <= -sqrt(6) "ou" x >= (1 + sqrt(17))/2)) &"(parabole)",
+  "ou"& (x = 2 "et" y <= 1) &"(droite parallèle à x = k)",
+  "ou"& (x = -sqrt(6) "et" y <= 1) &"(droite parallèle à x = k)",
+  "ou"& (x = (1 + sqrt(17))/2 "et" y <= (sqrt(17) - 1)/2) &"(droite parallèle à x = k)"
 )
 $
 
@@ -302,7 +307,6 @@ On peut en conclure que le lieu des coins de $Q_T$ est la réunion des ensembles
 #import "figures.typ": exemple14b
 #exemple14b()
 
-#v(6%)
 
 #align(center)[*Merci pour la lecture de ce devoir !*]
 
