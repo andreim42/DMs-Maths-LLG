@@ -16,23 +16,25 @@
 #import "figures.typ": exemples
 
 ===
-Pour plus de simplicité, nous utiliserons la notation $[C, arrow(dotless))$ pour désigner la demi-droite qui a pour début $C$ et comme direction $arrow(dotless)$
+Pour plus de simplicité, nous utiliserons la notation $[C, arrow(dotless))$ pour désigner la demi-droite qui a pour début $C$ et comme direction $arrow(dotless)$.
+
+De même, on notera parfois la droite tropicale $cal(T)$ de point central de coordonnées $x, y$, $cal(T)(x; y)$. On ne confondra pas pour autant confondre une droite tropicale (un ensemble de points) et son point central.
 
 ====
 
 #exemples()
 ====
-Soient $A(x_A, y_a)$ et $B(x_B, y_B)$ des points du plan.\
+Soient $A(x_A, y_A)$ et $B(x_B, y_B)$ des points du plan.\
 Supposons spdg que $x_A<=x_B$.\
 Si $x_A=x_B$:\
-  Alors $cal(T)(x_A, max(y_A, y_B))$ passe par $A$ et $B$ ($cal(T)$ est confondu avec le point avec le $y$ le plus élevé, et la droite verticale vers le bas (de direction $-arrow(dotless.j)$) passe par l'autre)\
-Sinon, si $x_A<x_B$:\ 
+  Alors $cal(T)(x_A, max(y_A, y_B))$ passe par $A$ et $B$ ($cal(T)$ est confondu avec le point avec le $y$ le plus élevé, et la demi-droite verticale vers le bas (de direction $-arrow(dotless.j)$) passe par l'autre point).\
+Sinon, si $x_A<x_B$ :\
   si $y_A>=y_B$:\
-    Alors $cal(T)(x_A, y_B)$ passe par $A$ et $B$ (c.f. $cal(T_4)$ du 1.A.1.a)  Remarque : ce serait pas plutôt $cal(T)(x_B, y_A)$ ?\
+    Alors $cal(T)(x_B, y_A)$ passe par $A$ et $B$ (c.f. $cal(T_4)$ du 1.A.1.a)\
   si $y_A<y_B$:\
-    si $x_B<y_B$:\
+    si $x_B - x_A < y_B - y_A$:\
       Alors $cal(T)(x_A, y_B-x_B+x_A)$ passe par $A$ et $B$ (c.f. $cal(T_2)$ du 1.A.1.a)\
-    si $x_B>=y_B$:\
+    si $x_B - x_A >= y_B - y_A$:\
       Alors $cal(T)(x_B-y_B+y_A, y_A)$ passe par $A$ et $B$ (c.f. $cal(T_1)$ et $cal(T_3)$ du 1.A.1.a)\
 
 Donc, dans tous les cas, il existe une droite tropicale $cal(T)$ qui passe par deux points $A$ et $B$ du plan.
@@ -46,50 +48,13 @@ Alors $A$ et $B$ sont sur une même droite de direction $-arrow(dotless.j)$. et 
 Donc la propriété $cal(B)$ n'est pas vérifié lorsque les points sont dépendants.
 
 ====
-Soient $A(x_A, y_B)$ et $B(x_B, y_B)$ deux points du plan indépendants.
+Soient $A$ et $B$ deux points du plan indépendants.
+D'après le *A.1.b)*, nous savons déjà qu'il existe au moins une droite tropicale passant par $A$ et $B$. Il reste à prouver son unicité.
 
-Soient $cal(T)$ et $cal(T')$ deux droites tropicales de centres respectifs $Y(x_Y, y_Y)$ et $Z(x_Z, y_Z)$.\
-Supposons que $A,B in cal(T)$ et $A,B in cal(T')$\
-Supposons spdg que $A in [Y, -arrow(dotless))and (B in [Y, -arrow(dotless.j))or B in [Y, arrow(dotless)+arrow(dotless.j)))$ ou $A in [Y,-arrow(dotless.j)) and B in [Y, arrow(dotless)+arrow(dotless.j))$\
-De même: $A in [Z, -arrow(dotless))and (B in [Z, -arrow(dotless.j))or B in [Z, arrow(dotless)+arrow(dotless.j)))$ ou $A in [Z,-arrow(dotless.j)) and B in [Z, arrow(dotless)+arrow(dotless.j))$
+Puisque $A$ et $B$ sont indépendants, ils n'appartiennent à aucune droite de direction $-arrow(dotless.i)$, $-arrow(dotless.j)$ ou $arrow(dotless.i)+arrow(dotless.j)$. Par conséquent, ils ne peuvent pas se trouver sur la même demi-droite d'une droite tropicale. 
+Ils doivent donc obligatoirement appartenir à deux demi-droites distinctes de la droite tropicale. 
 
-/*C'EST DE LA MERDE
-
-Donc on a: 
-$
-  A in [Y, -arrow(dotless))and (B in [Y, -arrow(dotless.j))or B in [Y, arrow(dotless)+arrow(dotless.j))) and A in [Z, -arrow(dotless))and (B in [Z, -arrow(dotless.j))or B in [Z, arrow(dotless)+arrow(dotless.j)))\
-  "ou" A in [Y, -arrow(dotless))and (B in [Y, -arrow(dotless.j))or B in [Y, arrow(dotless)+arrow(dotless.j))) and A in [Z,-arrow(dotless.j)) and B in [Z, arrow(dotless)+arrow(dotless.j)),\
-  "ou" A in [Y,-arrow(dotless.j)) and B in [Y, arrow(dotless)+arrow(dotless.j)) and A in [Z, -arrow(dotless))and (B in [Z, -arrow(dotless.j))or B in [Z, arrow(dotless)+arrow(dotless.j))),\
-  "ou" A in [Y,-arrow(dotless.j)) and B in [Y, arrow(dotless)+arrow(dotless.j)) or A in [Z,-arrow(dotless.j)) and B in [Z, arrow(dotless)+arrow(dotless.j))
-$
-
-1er cas: si $A in [Y, -arrow(dotless))and (B in [Y, -arrow(dotless.j))or B in [Y, arrow(dotless)+arrow(dotless.j))) and A in [Z, -arrow(dotless))and (B in [Z, -arrow(dotless.j))or B in [Z, arrow(dotless)+arrow(dotless.j)))$:\
-Alors $A$ appartient à deux (demi-)droites horizontales parallèles entre elles.\
-Donc $y_Y=y_Z$\
-$
-(B in [Y, -arrow(dotless.j))or B in [Y, arrow(dotless)+arrow(dotless.j))) 
-and (B in [Z, -arrow(dotless.j))or B in [Z, arrow(dotless)+arrow(dotless.j)))\
-<==>(B in [Y, -arrow(dotless.j)) and B in [Z, -arrow(dotless.j)))
-or(B in [Y, -arrow(dotless.j))and B in [Z, arrow(dotless)+arrow(dotless.j)))\
-or(B in [Y, arrow(dotless)+arrow(dotless.j)))and B in [Z, -arrow(dotless.j)))
-or(B in [Y, arrow(dotless)+arrow(dotless.j))and B in [Z, arrow(dotless)+arrow(dotless.j)))
-$
-1er sous-cas: Si $B in [Y, -arrow(dotless.j)) and B in [Z, -arrow(dotless.j))$\
-Alors $B$ appartient à deux (demi-)droites verticales et parallèles.\
-Donc $x_Y=x_Z$\
-2e sous-cas: Si $B in [Y, -arrow(dotless.j))and B in [Z, arrow(dotless)+arrow(dotless.j))$\
-Alors $Y=Z(=B)$\
-3e sous-cas: si $B in [Y, arrow(dotless)+arrow(dotless.j)))and B in [Z, -arrow(dotless.j))$\
-De même, $Y=Z=(=B)$\
-4e sous-cas: si $B in [Y, arrow(dotless)+arrow(dotless.j))and B in [Z, arrow(dotless)+arrow(dotless.j))$\
-Alors $B$ appartient à deux (demi-)droites parallèles.\
-Donc ces deux droites sont confondues sur l'intervalle où elles sont toutes deux définies.\
-Or, $Y in[Y, arrow(dotless)+arrow(dotless.j)) and Z in[Z, arrow(dotless)+arrow(dotless.j))and y_Y=y_Z$\
-Donc $x_Y=x_Z$
-
-Donc $x_Y=x_Z "et" y_Y=y_Z$ donc $Y=Z$
-
-2e sous-cas: $A in [Y, -arrow(dotless))and (B in [Y, -arrow(dotless.j))or B in [Y, arrow(dotless)+arrow(dotless.j))) and A in [Z,-arrow(dotless.j)) and B in [Z, arrow(dotless)+arrow(dotless.j))$*/
+Les directions des demi-droites étant fixes, l'intersection des droites portant ces demi-droites donne un point central unique. Le point central étant unique, la droite tropicale l'est aussi. La propriété $(cal(B)')$ est donc démontrée.
 
 ===
 On considère les droites tropicales $cal(T)$ et $cal(T')$ de centres respectifs $Y(x,y)$ et $Z(x',y')$
@@ -181,20 +146,20 @@ On observe bien que $hat(I) + hat(I') + hat(I'') = 45° + 135° + 90° = 270° !
 Donc tous les triangles tropicaux n'ont pas des angles de mesures sommant à $360°$.
 
 ====
-Prenons les droites tropicales $cal(T)$,$cal(T')$ et $cal(T'')$ d'origines respectives $T(x_T;y_T)$, $U(x_U;y_U)$ et $V(x_V;y_V)$
-Lorsqu’on suppose les sommets A, B et C du triangle tropical
-deux à deux indépendants, on a pour conditions d’existence de ce triangle tropical :
+Soit un triangle tropical de sommets $A$, $B$ et $C$ deux à deux indépendants.
+Par définition, un triangle tropical est un domaine borné du plan délimité par trois droites tropicales.
 
-- $x_T < x_U < x_V$
-- $y_U < y_T < y_V$
-- $x_T+y_V-y_T < x_V < x_U+y_V-y_U$
-- $y_U + x_V - x_U < y_V < y_T + x_V - x_T$
+Puisque le domaine est fermé et borné, ses trois côtés sont nécessairement portés par des segments issus des trois directions définissant les droites tropicales : $-arrow(dotless.i)$, $-arrow(dotless.j)$ et $arrow(dotless.i)+arrow(dotless.j)$.
 
-On en déduit donc que :
+Les sommets $A$, $B$ et $C$ correspondent aux points d'intersection de ces différentes directions. Les angles intérieurs du triangle sont donc fixés par l'intersection deux à deux de ces trois vecteurs directeurs :
 
-- $I in [T;-arrow(dotless.j)) inter [U;-arrow(dotless.i))$ donc $hat(I) = 90°$
-- $I' in [U;arrow(dotless.i)+arrow(dotless.j)) inter [V;-arrow(dotless.j))$ donc $hat(I) = 135°$
-- $I'' in [T;arrow(dotless.i)+arrow(dotless.j)) inter [V;-arrow(dotless.i))$ donc $hat(I) = 135°$
+- L'angle formé par les directions $-arrow(dotless.i)$ et $-arrow(dotless.j)$ mesure $90°$.
+- L'angle formé par les directions $-arrow(dotless.i)$ et $arrow(dotless.i)+arrow(dotless.j)$ mesure $135°$.
+- L'angle formé par les directions $-arrow(dotless.j)$ et $arrow(dotless.i)+arrow(dotless.j)$ mesure $135°$.
+
+Chaque sommet $A$, $B$ et $C$ correspond à l'un de ces trois angles.
+
+On a donc bien $hat(A) + hat(B) + hat(C) = 90° + 135° + 135° = 360°$.
 
 ==
 ===
@@ -215,13 +180,29 @@ Donc $times.o$ est distributif par rapport à $xor$.
 Soit $x, y in RR$. Soit $cal(T)$ le lieu des coins de $P_T$, soit l'ensemble des points du plan pour lesquels le maximum de $P_T$ est atteint par au moins deux membres.
 
 $
-#text[«maximum atteint au moins deux fois»] &<==> a + x = b + y "ou" a + x = c "ou" b + y = c \
-&<==> y = x + a - b "ou" x = c - a "ou" y = c - b
+#text[«maximum atteint au moins deux fois»] &<==> 
+cases(
+  &space space space space a + x = b + y >= c,
+  &"ou" a + x = c >= b + y,
+  &"ou" b + y = c >= a + x
+) \
+&<==>
+cases(
+  &space space space space (y = x + a - b "et" a + x >= c),
+  &"ou" (x = c - a "et" c >= b + y),
+  &"ou" (y = c - b "et" c >= a + x)
+) \
+&<==>
+cases(
+  &space space space space (y = x + a - b "et" x >= c - a),
+  &"ou" (x = c - a "et" y <= c - b),
+  &"ou" (y = c - b "et" x <= c - a)
+)
 $
 
-On remarque déjà que l'on retrouve bien nos trois demi-droites constituant une droite tropicale : une droite parallèle à $y = x$ (il s'agit du cas $y = x + a - b$), une droite parallèle à l'axe des abscisses $y = k$ avec $k$ constant (il s'agit du cas $y = c - b$) et une droite parallèle à l'axe des ordonnées $x = k$ avec $k$ constant (il s'agit du cas $x = c - a$). Il suffit maintenant que ces trois droites partent tous d'une même origine pour confirmer que nous avons bien une droite tropicale.
+On remarque que l'on retrouve bien les trois demi-droites constituant une droite tropicale : une demi-droite de direction $arrow(dotless.i)+arrow(dotless.j)$ (il s'agit du cas $y = x + a - b$ avec $x >= c - a$), une demi-droite de direction $-arrow(dotless.i)$ (il s'agit du cas $y = c - b$ avec $x <= c - a$) et une demi-droite de direction $-arrow(dotless.j)$ (il s'agit du cas $x = c - a$ avec $y <= c - b$). Il suffit maintenant de vérifier que ces trois demi-droites partent toutes d'une même origine.
 
-Pour trouver cet origine, résolvons le système suivant :
+Pour trouver cette origine, résolvons le système pour le cas où le maximum est atteint trois fois (intersection des droites) :
 
 $
 cases(
@@ -241,12 +222,6 @@ cases(
   x = c - a,
   y = c - b
 )
-&<==>
-cases(
-  67 = 67,
-  x = c - a,
-  y = c - b
-)
 $
 
 On trouve le point $O_cal(T)(c - a; c - b)$ comme origine de notre droite tropicale, c'est le seul point où le maximum est atteint trois fois.
@@ -259,46 +234,80 @@ De manière similaire à l'exercice précédent, soit $cal(T')$ le lieu des coin
 Soit $x, y in RR$. On a $Q_T(x, y) = 1 xor (-1) times.o x xor 0 times.o y xor (-5) times.o x^2 = max(1, x - 1, y, x^2 - 5)$.
 
 $
-#text[«maximum atteint au moins deux fois»] &<==>
+#text[«maximum atteint au moins deux fois»] &<==> 
 cases(
-  &space space space space  1 = x - 1 "et" 1>y "et" 1>x^2-5,
-  &"ou" 1 = y,
-  &"ou" 1 = x^2 - 5,
-  &"ou" x - 1 = y,
-  &"ou" x - 1 = x^2 - 5,
-  &"ou" y = x^2 - 5
+  &space space space space y = 1 >= max(x - 1, x^2 - 5),
+  &"ou" y = x - 1 >= max(1, x^2 - 5),
+  &"ou" y = x^2 - 5 >= max(1, x - 1),
+  &"ou" 1 = x - 1 >= max(y, x^2 - 5),
+  &"ou" 1 = x^2 - 5 >= max(y, x - 1),
+  &"ou" x - 1 = x^2 - 5 >= max(y, 1)
 ) \
 &<==>
 cases(
-  &space space space space  x = 2,
-  &"ou" y = 1,
-  &"ou" x^2 = 6,
-  &"ou" y = x - 1,
-  &"ou" x^2 - x - 4 = 0,
-  &"ou" y = x^2 - 5
+  &space space space space (y = 1 "et" x <= 2 "et" x^2 <= 6),
+  &"ou" (y = x - 1 "et" x >= 2 "et" x^2 - x - 4 <= 0),
+  &"ou" (y = x^2 - 5 "et" x^2 >= 6 "et" x^2 - x - 4 >= 0),
+  &"ou" (x = 2 "et" y <= 1 "et" -1 <= 1),
+  &"ou" (x = plus.minus sqrt(6) "et" y <= 1 "et" x - 1 <= 1),
+  &"ou" (x = (1 plus.minus sqrt(17))/2 "et" y <= x - 1 "et" x - 1 >= 1)
 ) \
 &<==>
 cases(
-  &space space space space  x = 2,
-  &"ou" y = 1,
-  &"ou" x = plus.minus sqrt(6),
-  &"ou" y = x - 1,
-  &"ou" x = (1 plus.minus sqrt(17))/2,
-  &"ou" y = x^2 - 5
+  &space space space space (y = 1 "et" -sqrt(6) <= x <= 2) &"(segment parallèle à" y = k")",
+  &"ou" (y = x - 1 "et" 2 <= x <= (1 + sqrt(17))/2) &"(segment parallèle à" y = x")",
+  &"ou" (y = x^2 - 5 "et" (x <= -sqrt(6) "ou" x >= (1 + sqrt(17))/2)) &"(parabole)",
+  &"ou" (x = 2 "et" y <= 1) &"(droite parallèle à x = k)",
+  &"ou" (x = -sqrt(6) "et" y <= 1) &"(droite parallèle à x = k)",
+  &"ou" (x = (1 + sqrt(17))/2 "et" y <= (sqrt(17) - 1)/2) &"(droite parallèle à x = k)"
 )
 $
 
-Pour avoir une droite tropicale nous avons besoin d'une demi-droite parallèle à l'abscisse et une demi-droite parallèle à $y = x$. Nous devons donc nécessairement avoir $y = 1$ et $y = x - 1$. Ainsi, on obtient les solutions $x = 2$ et $y = 1$ (que l'on retrouve aussi parmi la disjonction de cas).
+On remarque que l'on retrouve bien différentes composantes constituant notre lieu des coins : un segment horizontal (cas $y = 1$), un segment oblique (cas $y = x - 1$), deux branches paraboliques (cas $y = x^2 - 5$) et trois demi-droites de direction $-arrow(dotless.j)$ (les droites parallèles à $x=k$). Il suffit maintenant de vérifier que ces composantes partent de points centraux communs.
 
-Ainsi, nous avons bien que le point $O_cal(T') (2; 1)$ est le seul point à vérifier que le maximum est atteint au moins deux fois (il est en réalité aussi atteint trois fois en $(2; 1)$).
+Pour trouver ces origines, résolvons les systèmes pour les cas où le maximum est atteint trois fois (intersection des différentes courbes) :
 
-On peut en conclure que le lieu des coins de $Q_T$ est la droite tropicale $cal(T')$ d'origine $O_cal(T') (2; 1)$. Voici ci-dessous une figure de cette droite tropicale :
+$
+cases(
+  y = 1,
+  y = x^2 - 5,
+  x = -sqrt(6)
+)
+#h(2em) " ; " #h(2em)
+cases(
+  y = 1,
+  y = x - 1,
+  x = 2
+)
+$
+#align(center)[et]
+$
+cases(
+  y = x - 1,
+  y = x^2 - 5,
+  x = (1 + sqrt(17))/2
+)
+<==>
+cases(
+  y = (1 + sqrt(17))/2 - 1 = (sqrt(17)-1)/2,
+  y = x^2 - 5,
+  x = (1 + sqrt(17))/2
+)
+$
+
+On trouve les points $I(-sqrt(6); 1)$, $I'(2; 1)$ et $I''((1+sqrt(17))/2; (sqrt(17)-1)/2)$ comme points d'intersection de notre figure, ce sont les seuls points où le maximum est atteint trois fois.
+
+On peut en conclure que le lieu des coins de $Q_T$ est la réunion des ensembles de points définis plus tôt. Voici ci-dessous une figure de ce lieu des coins :
 
 #import "figures.typ": exemple14b
 #exemple14b()
 
-#v(2%)
+#v(6%)
 
-#align(center + bottom)[*Merci pour la lecture de ce devoir !*]
+#align(center)[*Merci pour la lecture de ce devoir !*]
+
+#align(center + bottom)[
+L'ensemble de nos devoirs maison, fichiers PDF et codes sont disponibles sur : \ #link("https://github.com/andreim42/DMs-Maths-LLG")
+]
 
 ]

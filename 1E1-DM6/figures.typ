@@ -112,8 +112,8 @@
   align(center)[
     #cetz.canvas({
       import cetz.draw: *
-      let env = (-8, -8, 8, 8)
-      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
+      let env = (-7, -7, 8, 8)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: true)
 
       droite-tropicale(env, -3, 2, $cal(T)_1(-3; 2)$, c-bleu)
       point(-2, 3, $A_1$, color: c-bleu)
@@ -201,9 +201,38 @@
   align(center)[
     #cetz.canvas({
       import cetz.draw: *
-      let env = (-3, -3, 5, 5)
-      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
-      droite-tropicale(env, 2, 1, $cal(T')(2; 1)$, c-violet)
-    }, length: 2.5em)
+      let env = (-8, -8, 8, 10)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: true)
+
+      let st = (paint: c-violet, thickness: 1.5pt, cap: "round", join: "round")
+      
+      let x1 = -calc.sqrt(6)
+      let x2 = 2
+      let x3 = (1 + calc.sqrt(17)) / 2
+
+      line((x1, 1), (x1, env.at(1)), stroke: st)
+      line((x2, 1), (x2, env.at(1)), stroke: st)
+      line((x3, x3 - 1), (x3, env.at(1)), stroke: st)
+
+      let pts-gauche = range(-39, -24).map(i => {
+        let x = i / 10
+        (x, x * x - 5)
+      })
+      pts-gauche.push((x1, 1))
+      line(..pts-gauche, stroke: st)
+      line((x1, 1), (x2, 1), stroke: st)
+      line((x2, 1), (x3, x3 - 1), stroke: st)
+
+      let pts-droite = ((x3, x3 - 1),) + range(26, 40).map(i => {
+        let x = i / 10
+        (x, x * x - 5)
+      })
+      line(..pts-droite, stroke: st)
+
+      point(x1, 1, $I$, color: c-violet, anchor: "south-east")
+      point(x2, 1, $I'$, color: c-violet, anchor: "south-east")
+      point(x3, x3 - 1, $I''$, color: c-violet, anchor: "south-west")
+      
+    }, length: 2.6em)
   ]
 }
