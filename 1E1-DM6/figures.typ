@@ -177,3 +177,33 @@
     }, length: 2.5em)
   ]
 }
+
+#let exemple14a() = {
+  align(center)[
+    #cetz.canvas({
+      import cetz.draw: *
+      let env = (-1, -1, 7, 7)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: true)
+
+      droite-tropicale(env, 2, 1, $cal(T)(2; 1)$, c-bleu)
+      droite-tropicale(env, 5, 0, $cal(T')(5; 0)$, c-rouge)
+      droite-tropicale(env, 6, 6, $cal(T'')(6; 6)$, c-vert)
+
+      point(2, 0, $I(2; 0)$, color: c-rouge, anchor: "south-east")
+      point(6, 1, $I'(6; 1)$, color: c-rouge)
+      point(6, 5, $I''(6; 5)$, color: c-vert)
+      
+    }, length: 2.5em)
+  ]
+}
+
+#let exemple14b() = {
+  align(center)[
+    #cetz.canvas({
+      import cetz.draw: *
+      let env = (-3, -3, 5, 5)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
+      droite-tropicale(env, 2, 1, $cal(T')(2; 1)$, c-violet)
+    }, length: 2.5em)
+  ]
+}
