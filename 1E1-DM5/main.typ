@@ -195,11 +195,7 @@ _Montrons qu'on peut choisir un $z = k/n$ tel que $x < z < y$._ : Soit $z = k/n$
 
 $
 x < z < y &<==> a/(n + 1) < k/n < (a + 1)/(n + 1) \
-&<==> (n a)/n(n + 1) < k(n + 1)/n(n + 1) < n(a + 1)/n(n + 1) \
-&<==> n a < k(n + 1) < n(a + 1) \
-&<==> n a < k n + k < n a + n \
-&<==> n a < k(n + 1) < n(a + 1) \
-&<==> (n a)/(n + 1) < k < n(a + 1)/(n + 1) \
+&<==> (a n)/(n + 1) < k < n(a + 1)/(n + 1) \
 &<==> (a(n + 1) - a)/(n + 1) < k < (n a + n)/(n + 1) = (a(n + 1) - a + n)/(n + 1) \
 &<==> a - a/(n + 1) < k < a - (a - n)/(n + 1)
 $
