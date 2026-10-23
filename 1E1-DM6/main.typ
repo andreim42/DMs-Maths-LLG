@@ -18,7 +18,7 @@
 ===
 Pour plus de simplicité, nous utiliserons la notation $[C, arrow(dotless))$ pour désigner la demi-droite qui a pour début $C$ et comme direction $arrow(dotless)$.
 
-De même, on notera parfois la droite tropicale $cal(T)$ de point central de coordonnées $x, y$, $cal(T)(x; y)$. On ne confondra pas pour autant confondre une droite tropicale (un ensemble de points) et son point central.
+De même, on notera parfois la droite tropicale $cal(T)$ de point central de coordonnées $x, y$, $cal(T)(x; y)$. On veillera pour autant à ne pas confondre une droite tropicale (un ensemble de points) et son point central.
 
 ====
 
