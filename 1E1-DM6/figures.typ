@@ -1,4 +1,4 @@
-#import "@preview/cetz:0.3.3"
+#import "@preview/cetz:0.3.4"
 #import cetz.draw: *
 
 #let vector(from, to, color: black, thickness: 1.4pt, label: none, anchor: "north") = {
@@ -101,13 +101,13 @@
   point(x, y, name, color: color, anchor: "north-west")
 }
 
+#let c-bleu   = rgb("#0284c7")
+#let c-rouge  = rgb("#e11d48")
+#let c-vert   = rgb("#15803d")
+#let c-violet = rgb("#7e22ce")
+#let c-noir   = luma(30)
 
 #let exemples() = {
-  let c-bleu   = rgb("#0284c7")
-  let c-rouge  = rgb("#e11d48")
-  let c-vert   = rgb("#15803d")
-  let c-violet = rgb("#7e22ce")
-  let c-noir   = luma(30)
 
   align(center)[
     #cetz.canvas({
@@ -115,22 +115,65 @@
       let env = (-8, -8, 8, 8)
       repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
 
+      droite-tropicale(env, -3, 2, $cal(T)_1(-3; 2)$, c-bleu)
       point(-2, 3, $A_1$, color: c-bleu)
       point(0, 5, $B_1$, color: c-bleu)
-      droite-tropicale(env, -3, 2, $cal(T)_1(-3; 2)$, c-bleu)
 
+      droite-tropicale(env, 1, 2, $cal(T)_2(1; 2)$, c-rouge)
       point(1, 1, $A_2$, color: c-rouge)
       point(3, 4, $B_2$, color: c-rouge)
-      droite-tropicale(env, 1, 2, $cal(T)_2(1; 2)$, c-rouge)
 
+      droite-tropicale(env, 4, 1, $cal(T)_3(4; 1)$, c-vert)
       point(2, 1, $A_3$, color: c-vert)
       point(5, 2, $B_3$, color: c-vert)
-      droite-tropicale(env, 4, 1, $cal(T)_3(4; 1)$, c-vert)
 
+      droite-tropicale(env, 6, -1, $cal(T)_4(6; -1)$, c-violet)
       point(2, -1, $A_4$, color: c-violet)
       point(6, -4, $B_4$, color: c-violet)
-      droite-tropicale(env, 6, -1, $cal(T)_4(6; -1)$, c-violet)
 
+    }, length: 2.5em)
+  ]
+}
+
+
+#let exemple13a() = {
+  align(left)[
+    #cetz.canvas({
+      import cetz.draw: *
+      let env = (-1, -1, 7, 7)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
+
+      droite-tropicale(env, 5, 4, $cal(T')(x'; y')$, c-bleu)
+      droite-tropicale(env, 2, 2, $cal(T)(x; y)$, c-rouge)
+      
+    }, length: 2.5em)
+  ]
+}
+
+#let exemple13b() = {
+  align(left)[
+    #cetz.canvas({
+      import cetz.draw: *
+      let env = (-1, -1, 7, 7)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
+
+      droite-tropicale(env, 5, 2, $cal(T')(x'; y')$, c-bleu)
+      droite-tropicale(env, 3, 3, $cal(T)(x; y)$, c-rouge)
+      
+    }, length: 2.5em)
+  ]
+}
+
+#let exemple13c() = {
+  align(left)[
+    #cetz.canvas({
+      import cetz.draw: *
+      let env = (-1, -1, 7, 7)
+      repere(env, o-legend: $(0, 0)$, vectors: true, ticks: false)
+
+      droite-tropicale(env, 2, 4, $cal(T')(x'; y')$, c-bleu)
+      droite-tropicale(env, 3, 2, $cal(T)(x; y)$, c-rouge)
+      
     }, length: 2.5em)
   ]
 }
