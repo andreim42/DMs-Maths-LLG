@@ -225,9 +225,9 @@ D'après la question *C.3)* l'une, au moins, de ces fractions appartient à $cal
 Raisonnons par disjonction de cas :
 
 =====
-$1^("er")$ cas : $x, y in cal(F)_n$. On sait que $x$ et $y$ sont deux fractions consécutives de $cal(F)_(n+1)$. Or, $x, y in cal(F)_n$ et $cal(F)_n in cal(F)_(n+1)$ donc elles sont aussi consécutives dans $cal(F)_n$.
+$1^("er")$ cas : $x, y in cal(F)_n$. On sait que $x$ et $y$ sont deux fractions consécutives de $cal(F)_(n+1)$. Or, $x, y in cal(F)_n$ et $cal(F)_n subset cal(F)_(n+1)$ donc elles sont aussi consécutives dans $cal(F)_n$.
 
-On a alors $delta (x; y) = -1$ et $x xor y$ qui va être la première fraction à appraître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 1$ par hypothèse de récurrence.
+On a alors $delta (x; y) = -1$ et $x xor y$ qui va être la première fraction à apparaître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 1$ par hypothèse de récurrence.
 
 Or, on sait que $x$ et $y$ sont consécutives dans $cal(F)_(n+1)$, donc on a même que $x xor y$ va être la première fraction à apparaître entre $x$ et $y$ dans un ensemble $cal(F)_m$ avec $m >= n + 2 = (n + 1) + 1$.
 Donc $cal(P)(n + 1)$ est vraie.
@@ -277,7 +277,7 @@ _Conclusion_ : Dans tous les cas, $cal(P)(n + 1)$ est vraie.
 Ainsi, pour tout $n in NN^*, cal(P)(n)$ est vraie par principe de récurrence.
 
 == Cercles de Ford.
-Faut montrer qu'il existe un point appartenant aux deux cercles correspondant à $x$ et $y$
+Il faut montrer qu'il existe un point appartenant aux deux cercles correspondant à $x$ et $y$.
 
 - Montrons que le cercle de Ford à un nombre de $cal(F_n)$ est tangent à l'axe des abscisses.
 Soit $x$ une fraction de $cal(F_n)$ (avec $x=a/b$).
@@ -288,7 +288,8 @@ On considère le point $M$ le projeté orthogonal de $O$ sur l'axe des abscisses
 
 Donc $M$ a pour coordonnées $(a/b, 0)$.
 
-$M O=sqrt((x_M-x_O)^2+(y_M-y_O)^2)=sqrt(0^2+(-1/(2b^2))^2)=1/(2b^2)$\
+$M O=sqrt((x_M-x_O)^2+(y_M-y_O)^2)=sqrt(0^2+(-1/(2b^2))^2)=1/(2b^2)$
+
 Donc $M$ appartient au cercle $scr(C)$ de centre O et de rayon $1/(2b^2)$ et $O M$ est perpendiculaire à l'axe des abscisses.
 
 Donc $scr(C)$ est tangent à l'axe des abscisses.
@@ -341,7 +342,7 @@ $ 12/17  xor 5/7 = 17/24$.
 
 $24>20$, on ne peut donc pas le conserver.
 
-L'encadrement, obtenu est donc $12/17 < 1/sqrt(2) < 5/7 $ qui est le meilleur encadrement possible des dénominateurs inférieurs ou égaux à $20$ 
+L'encadrement obtenu est donc $12/17 < 1/sqrt(2) < 5/7 $ qui est le meilleur encadrement possible des dénominateurs inférieurs ou égaux à $20$ 
 
 ====
 On poursuit donc avec exactement la même méthode :
@@ -364,22 +365,19 @@ A l'étape 10 le dénominateur 106, dépasse 100 : on ne peut donc pas retenir c
 L'encadrement obtenu est donc $70/99 < 1/sqrt(2) < 29/41$ qui est le meilleur encadrement possible des dénominateurs inférieurs oui égaux à $100$ 
 
 ===
-Montrez que : $forall$  $alpha $ $in$  $]0;1[$ et tout $n in NN^*, exists a/b in cal(F)_n$ ,telle que : 
-$|alpha - a/b|$ $< 1/b(n+1) $
+Montrons que $forall alpha in ]0;1[, forall n in NN^*, exists a/b in cal(F)_n |alpha - a/b| < 1/b(n+1)$
 
-avec $a/b <= alpha <= c/d $
+avec $a/b <= alpha <= c/d, a/b,c/d in cal(F)_n$
 
-Considérons les deux fractions consécutives de $cal(F)_n$, la partie B nous permet d'utiliser la propriété:
+Considérons les deux fractions consécutives de $cal(F)_n$, la partie *B* nous permet d'utiliser la propriété:
 
-$"bc" - "ad" = 1 $
+$b c - a d = 1$
 
-Ainsi : 
-$c/d -a/b = ("bc"-"ad")/"bd" = 1/"bd"$
+Ainsi $c/d-a/b=(b c-a d)/(b d)=1/(b d)$
 
-On obtient donc : $c/d-a/b=1/"bd"$ 
+On obtient donc $c/d-a/b=1/(b d)$ 
 
-De plus, puisque les fractions sont consécutives, dans $cal(F)_n$, on a: 
-$b+d>=n+1$
+De plus, puisque les fractions sont consécutives, dans $cal(F)_n$, on a $b+d>=n+1$
 
 Posons : $u= alpha-a/b $  et $v=c/d-alpha$, deux nombres positifs ou nuls 
 
@@ -390,7 +388,7 @@ Donc
 $u+v = c/d-a/b$
 
 Or d'après l'étape précédente
-$u+v = 1/"bd"$
+$u+v = 1/(b d)$
 
 On aurait alors : $u>1/b(n+1)$
 et 
@@ -403,16 +401,16 @@ On met au même dénominateur :
 $u+v > (b+d)/(b d(n+1))$
 
 Or $b+d>= n+1$, donc :
-$(b+d)/"bd"(n+1)>=1/"bd"$
+$(b+d)/(b d)(n+1)>=1/(b d)$
 
 Par conséquent : 
-$u+v>1/"bd"$
+$u+v>1/(b d)$
 Mais nous avons démontré a l'étape deux que : 
-$u+v=1/"bd"$
+$u+v=1/(b d)$
 
 Absurde !
 
-Ainsi au moins l'une des deux fractions verifie l'inégalité recherchée. 
+Ainsi au moins l'une des deux fractions vérifie l'inégalité recherchée. 
 
 *Conclusion :*
 Il existe une fraction $a/b in cal(F)_n$ telle que : $|alpha - a/b| < 1/b(n+1)$
