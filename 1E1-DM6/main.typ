@@ -307,6 +307,7 @@ On peut en conclure que le lieu des coins de $Q_T$ est la réunion des ensembles
 #import "figures.typ": exemple14b
 #exemple14b()
 
+#v(1em)
 
 #align(center)[*Merci pour la lecture de ce devoir !*]
 
