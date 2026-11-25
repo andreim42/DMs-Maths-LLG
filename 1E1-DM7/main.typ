@@ -17,26 +17,23 @@ Soient $a, b, c in RR$.
 
 === Réduction du problème (transformation de #smallcaps[Tchirnhauss]).
 
-Soit $x in RR$.
-On pose $X = x + a/3, p = b - a^2/3 "et" q=c+(2a^3)/27-(a b)/3$. On obtient donc,
+On pose $X = x + a/3, p = b - a^2/3 "et" q=c+(2a^2)/27-(a b)/3$. Ainsi, $forall x in RR, $
 
 $
 X^3 + p X + q = 0 &<==> (x + a/3)^3 + p(x + a/3) + q = 0 \
 &<==> x^3 + 3x^2 a/3 + 3a^2/9 x + a^3/27 + p x + p a/3 + q = 0 \
 &<==> x^3 + a x^2 + (a^2/3 + p)x + a^3/27 + p a/3 + q = 0 \
-&<==> x^3 + a x^2 + (a^2/3+b-a^2/3)x + a^3/27 + a/3(b-a^2/3)+c+(2a^3)/27 - (a b)/3 = 0 \ 
-&<==> x^3 + a x^2 + b x + a^3/27+(a b)/3-(3a^3)/27+(2a^3)/27-(a b)/3+c = 0 \
-&<==> x^3 + a x^2 + b x + c = 0
+&<==> x^3 + a x^2 + (a^2/3+b-a^2/3)x + a^3/27 + a/3(b-a^2/3)+c+(2a^2)/27 - (a b)/3 = 0 \ 
+&<==> x^3 + a x^2 + b x + a^3/27+(a b)/3-(3a^2)/27+(2a^2)/27-(a b)/3+c = 0 \
+&<==> x^3 + a x^2 + b x + c
 $
-
-On peut donc bien se ramener à l'équation $(E_1)$ à partir de l'équation $(E_0)$ en suivant les équivalences dans le sens inverse avec le changement de variable effectué.
-
 ===
-Soient $u, v in RR$ tels que $X=u+v$.
+Posons $X=u+v$
 
 ====
 On a donc:\
 $
+forall x in RR,
 X^3 + p X + q = 0&<==> (u+v)^3 + p(u+v) + q=0 \
 &<==> u^3 + 3u^2v + 3u v^2 + v^3 + p(u+v) + q = 0 \
 &<==> u^3 + v^3 + 3u v(u+v) + p(u+v) + q = 0 \
@@ -44,89 +41,25 @@ X^3 + p X + q = 0&<==> (u+v)^3 + p(u+v) + q=0 \
 $
 
 ====
-On impose pour la suite $3u v + p = 0$.
 L'équation devient:
-
 $
-u^3 + v^3 + (u+v)(3u v+p) + q = 0
+forall x in RR, u^3 + v^3 + (u+v)(3u v+p) + q = 0 
 &<==> u^3 + v^3 + 0(u+v) + q = 0 \
 &<==> u^3 + v^3 + q = 0
 $
 
 ====
-On a $3u v + p = 0$, donc $u v = - p/3$, donc $u^3v^3 = - p^3/27$ 
-
-#v(5em)
+$3u v + p = 0$, donc $u v = p/3$, donc $u^3v^3 = p^3/27$ 
 
 ====
-En supposant que $(u, v)$ vérifie $(E_2)$ et $3u v + p = 0$, on a $u^3 + v^3 = -q$ et $u^3 v^3 = -p^3/27$. Ainsi,
-
 $
-forall t in RR, t^2 + q t - p^3/27=0 &<==> t^2 -t(u^3 + v^3) + u^3v^3 = 0 \
-&<==> t^2 -u^3t -v^3t + u^3v^3 = 0 \
-&<==> (t - u^3)(t-v^3) = 0
+forall x in RR, x^2 + q x + p^3/27=0 &<==> x^2 -x(u^3 + v^3) + u^3v^3 = 0 \
+&<==> x^2 -u^3x -v^3x + u^3v^3 = 0 \
+&<==> (x - u^3)(x-v^3) = 0
 $
-Donc $u^3$ et $v^3$ sont des racines du polynôme du second degré $t^2 + q t - p^3/27$.
+Donc $u^3$ et $v^3$ sont solutions de l'équation x^2 + q x + p^3/27=0
 
-/* Bloc inutile d'Andrei crée par hubris
-Or, on a $Delta = q^2 + (4p^3)/27$. (DISCUTER DU SIGNE DE DELTA)
-
-Donc $t_1 = (-q - sqrt(Delta))/2 = (-q - sqrt(q^2 + (4p^3)/27))/2$ et $t_2 = (-q + sqrt(Delta))/2 = (-q + sqrt(q^2 + (4p^3)/27))/2$
-
-Quitte à interchanger $u$ et $v$ on peut supposer que $u^3 = t_1$ et $v^3 = t_2$.
-
-Donc $u = root(3, t_1) = root(3, (-q - sqrt(q^2 + (4p^3)/27))/2)$ et $v = root(3, t_2) = root(3, (-q + sqrt(q^2 + (4p^3)/27))/2)$.
-
-Or, $(E_1) <==>^(X = u + v) (E_2)$. Donc $$
-
-Ainsi, $X_1 = u + v = root(3, (-q - sqrt(q^2 + (4p^3)/27))/2) + root(3, (-q + sqrt(q^2 + (4p^3)/27))/2)$ est une solution de $(E_2)$ et donc de $(E_1)$.
-
-Donc, il existe $d, e, f in RR$ tel que
-$
-X^3 + p X + q &= (X - X_1)(d X^2 + e X + f) \
-&= d X^3 + e X^2 + f X - d X_1 X^2 - e X_1 X - f X_1 \
-&= d X^3 + (e - d X_1)X^2 + (f - e X_1)X - f X_1
-$
-
-Par identification, on a :
-
-$
-cases(
-  d = 1,
-  e - d X_1 = 0,
-  f - e X_1 = p,
-  f X_1 = -q
-)
-<==>
-
-cases(
-  d = 1,
-  e = X_1,
-  f = p + X_1^2,
-  f X_1 = -q
-)
-$
-
-Donc $X^3 + p X + q = (X - X_1)(X^2 + X_1 X + p + X^2_1)$
-
-Trouvons les racines de $X^2 + X_1 X + p + X^2_1$ :
-
-$Delta' = X_1^2 - 4(p + X_1^2) = X^2_1 - 4p - 4X^2_1 = -(3X^2_1 + 4p)$
-
-Si $Delta' > 0$, alors on a $X_2 = (-X_1 - sqrt(Delta'))/2$ et $X_3 = (-X_1 + sqrt(Delta'))/2$.
-
-Puisqu'on a effectué le changement de variable $X = x + a/3$ pour passer de $(E_0)$ à $(E_1)$, pour toute solution $S$ de $(E_1)$, $S - a/3$ est une solution de $(E_0)$.
-
-Donc
-$
-cal(S) = {X_1, X_2, X_3} = {
-  root(3, (-q - sqrt(q^2 + (4p^3)/27))/2) + root(3, (-q + sqrt(q^2 + (4p^3)/27))/2) - a/3, \
-  (-(root(3, (-q - sqrt(q^2 + (4p^3)/27))/2) + root(3, (-q + sqrt(q^2 + (4p^3)/27))/2)) - sqrt(-3(root(3, (-q - sqrt(q^2 + (4p^3)/27))/2) + root(3, (-q + sqrt(q^2 + (4p^3)/27))/2))^2 - 4p))/2 - a/3, \
-  (-(root(3, (-q - sqrt(q^2 + (4p^3)/27))/2) + root(3, (-q + sqrt(q^2 + (4p^3)/27))/2)) + sqrt(-3(root(3, (-q - sqrt(q^2 + (4p^3)/27))/2) + root(3, (-q + sqrt(q^2 + (4p^3)/27))/2))^2 - 4p))/2 - a/3
-}
-$
-
-*/
+Mais bon, je ne vois pas à quoi ça sert...
 
 == Exemples
 ===
@@ -218,106 +151,5 @@ On pose $Delta = (4p^3 + 27q^2)/27$
 
 ===
 On sait que, en posant $X = u + v$ et en imposant $3u v + p = 0$, on obtient que $u^3$ et $v^3$ sont solutions de l'équation du second degré suivante : $t^2 + q t - p^3/27 = 0$.
-
-Le discriminant de cette équation est $Delta_2 = q^2 + 4 times p^3 / 27 = (27q^2 + 4p^3)/27 = Delta$.
-
-Or $Delta > 0$, donc $Delta_2 > 0$.
-
-Donc l'équation $t^2 + q t - p^3/27 = 0$ admet deux solutions distinctes :
-
-$u^3 = (-q + sqrt(Delta))/2$ et $v^3 = (-q - sqrt(Delta))/2$, quitte à les interchanger sans perte de généralité.
-
-De plus, $u^3 v^3 = -p^3/27$, donc dans $RR$, $u v = -p/3$, c'est-à-dire $3u v + p = 0$.
-
-Donc $X_0 = u + v = root(3, (-q + sqrt(Delta))/2) + root(3, (-q - sqrt(Delta))/2)$ est solution de $(E_1)$.
-
-Montrons qu'elle est unique. Puisque $X_0$ est racine de $(E_1)$, il existe $a, b, c in RR$ tels que :
-$
-X^3 + p X + q &= (X - X_0)(a X^2 + b X + c) \
-&= a X^3 + (b - a X_0)X^2 + (c - b X_0)X - c X_0
-$
-
-Par identification, on a :
-$
-cases(
-  a = 1,
-  b - a X_0 = 0,
-  c - b X_0 = p,
-  -c X_0 = q
-)
-<==>
-cases(
-  a = 1,
-  b = X_0,
-  c = p + X_0^2,
-  -(p + X_0^2)X_0 = q
-)
-$
-
-La dernière équation est bien vérifiée car $-(p + X_0^2)X_0 = -X_0^3 - p X_0 = q$ (puisque $X_0$ est racine de $(E_1)$).
-
-Donc $X^3 + p X + q = (X - X_0)(X^2 + X_0 X + p + X_0^2)$.
-
-Le discriminant du polynôme $X^2 + X_0 X + p + X_0^2$ vaut $Delta' = X_0^2 - 4(p + X_0^2) = -3X_0^2 - 4p$.
-
-Or $X_0 = u + v$ et $p = -3u v$, donc :
-
-$Delta' = -3(u + v)^2 + 12u v = -3(u - v)^2$
-
-Comme $Delta > 0$, on a $u^3 != v^3$, donc $u != v$, d'où $Delta' < 0$.
-
-Le polynôme quotient n'a donc aucune racine réelle, et $(E_1)$ n'admet qu'une seule racine $X_0$.
-
-===
-On sait que, en posant $X = u + v$ et en imposant $3u v + p = 0$, $u^3$ et $v^3$ sont solutions de l'équation du second degré $t^2 + q t - p^3/27 = 0$, de discriminant $Delta_2 = Delta$.
-
-Or $Delta = 0$, donc $Delta_2 = 0$, c'est-à-dire $u^3 = v^3 = -q/2$.
-
-Comme $u^3 v^3 = -p^3/27$, on a bien $u v = -p/3$, donc $X_1 = u + v = root(3, -q/2) + root(3, -q/2) = -2root(3, q/2)$ est solution de $(E_1)$.
-
-Puisque $X_1$ est racine de $(E_1)$, il existe $a, b, c in RR$ tels que :
-$
-X^3 + p X + q &= (X - X_1)(a X^2 + b X + c) \
-&= a X^3 + (b - a X_1)X^2 + (c - b X_1)X - c X_1
-$
-
-Par identification, on a :
-$
-cases(
-  a = 1,
-  b - a X_1 = 0,
-  c - b X_1 = p,
-  -c X_1 = q
-)
-<==>
-cases(
-  a = 1,
-  b = X_1,
-  c = p + X_1^2,
-  -(p + X_1^2)X_1 = q
-)
-$
-
-La dernière équation est bien vérifiée car $-(p + X_1^2)X_1 = -X_1^3 - p X_1 = q$ (puisque $X_1$ est racine de $(E_1)$).
-
-Donc $X^3 + p X + q = (X - X_1)(X^2 + X_1 X + p + X_1^2)$.
-
-Cherchons les racines du polynôme $X^2 + X_1 X + p + X_1^2$.
-
-On a $Delta = 0$ donc $4p^3 + 27q^2 = 0$ donc $4p^3 = -27q^2$ donc $p = root(3, (-27q^2)/4) = -3 root(3, q^2/4)$.
-
-De plus, $X_1^2 = (-2root(3, q/2))^2 = 4root(3, q^2/4)$
-
-Le discriminant du polynôme $X^2 + X_1 X + p + X_1^2$ vaut :
-
-$Delta' = X_1^2 - 4(p + X_1^2) = -3X_1^2 - 4p = -3(4root(3, q^2/4)) + 4(3root(3, q^2/4)) = 0$.
-
-Donc $X^2 + X_1 X + p + X_1^2$ a une racine double qui est $X_2 = -X_1/2 = 2root(3, q/2)/2 = root(3, q/2)$
-
-Ainsi: 
-
-- si $q != 0$, $X_1 != X_2$ et $(E_1)$ admet exactement deux racines : $cal(S) = {-2root(3, q/2), root(3, q/2)}$.
-
-- si $q = 0$, alors $p = 0$ et les deux racines sont confondues : $X_1 = X_2 = 0$, donc $(E_1)$ n'admet qu'une racine d'ordre $3$ qui est $0$.
 
 ]
